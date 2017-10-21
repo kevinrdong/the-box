@@ -1,0 +1,7 @@
+{
+  "name": "leane",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.6.0"
+  }
+}

@@ -1,0 +1,68 @@
+<section class="hero is-light is-medium">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroB" class="navbar-menu">
+          <% if current_user %>
+          <div class="navbar-item">
+            <p>Welcome <%= current_user.email %></p>
+          </div>
+          <% end %>
+          <div class="navbar-end">
+          <% if current_user %>
+            <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %> 
+          <% else %>
+            <%= link_to '登入',new_user_session_path ,class:"navbar-item" %>            
+          <% end %>  
+            <%= link_to '下訂單',root_path,class:"navbar-item"%>            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title is-2">
+        一盒
+      </p>
+      <br>
+      <p class="subtitle  is-6">
+        一個盒子，蘊含著我們對生活品質的想像，在手作的情感，與生活的溫度裡,裝載每份深刻
+      </p>
+    </div>
+  </div>
+  <div class="hero-foot">
+  <nav class="tabs is-boxed is-fullwidth">
+    <div class="container">
+      <ul>
+        <li class="<%= 'is-active'if current_page?'/' %>">
+          <%= link_to '首頁',root_path %>
+        </li>
+        <li class="<%= 'is-active'if current_page?products_path %>">
+          <%= link_to '商品',products_path %>
+        </li>
+        <li class="<%= 'is-active'if current_page?brand_path %>">
+          <%= link_to '牌品',brand_path %>
+        </li>
+        <li class="<%= 'is-active'if current_page?designers_path %>">
+          <%= link_to '設計師',designers_path %>
+        </li>
+        <li class="<%= 'is-active'if current_page?contact_path %>">
+          <%= link_to '聯絡方式',contact_path %>
+        </li>          
+      </ul>
+    </div>
+  </nav>
+  </div>
+</section>
