@@ -19,12 +19,6 @@
   <% end -%>
 
   <div class="actions">
-    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-
-<div id="status">
-</div>
     <%= f.submit "Log in" %>
   </div>
 <% end %>
