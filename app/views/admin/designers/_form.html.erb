@@ -1,0 +1,33 @@
+<div class="field">
+    <%= f.label :name ,'設計師名稱', class: 'label'%><br />
+      <% @designer.errors.full_messages_for(:name).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %>    
+    <%= f.text_field :name, class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description ,'設計師敘述', class: 'label'%>
+      <% @designer.errors.full_messages_for(:description).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %>
+    <%= f.text_area :description, class: 'input'%>
+  </div>
+  <div class="field">
+  <%= f.label :image,'設計師照片' ,class:'label'%>
+      <% @designer.errors.full_messages_for(:image).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %>
+  <div class="form-group">
+    <img id="img_prev" width=300 height=300 src="#" alt="請選擇照片" class="img-thumbnail hidden"/> <br/>
+    <span class="btn btn-default btn-file">
+    <%= f.file_field :image, id: "avatar-upload" %>
+    </span>
+    <%= f.hidden_field :image_cache %> 
+  </div>
+  </div>
+
+
+  <%= f.submit "確認" ,class:"button is-light"%>
+  
+ 

@@ -3,6 +3,17 @@
 		<h1 class="title has-text-centered">設計師列表</h1>
 		<% @designers.each do |designer| %>
 		  <br>	
+		  <div class="columns">
+		  <div class="column">
+		  	
+		  </div>
+
+		  <div class="colum is-right">
+	    	<%= link_to '編輯',edit_admin_designer_path(designer),class:'button is-light '%> 	
+		  	<%= link_to '刪除',admin_designer_path(designer),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger '%>
+		  </div>		  	
+		  </div>
+
 		  <hr>
 		  <br>
 		  <br>

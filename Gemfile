@@ -33,6 +33,12 @@ gem 'font-awesome-sass'
 # devise
 gem 'devise'
 gem 'omniauth-facebook'
+#carrierwave
+gem 'carrierwave', '~> 1.0'
+#awesomeprint
+gem 'awesome_print'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

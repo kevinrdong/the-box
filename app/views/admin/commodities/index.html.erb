@@ -3,11 +3,18 @@
 		<h1 class="title has-text-centered">商品列表</h1>
 		<% @types.each do |type| %>
 		  <br>	
+		  <div class="columns">
 		  <div class="column">
 		  <div class="title">
 		  	 <%= type.name%>
 		  </div>		  	
+		  </div>
+
+		  <div class="colum is-right">
+		  	<%= link_to '刪除',admin_path(type.id),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger '%>
 		  </div>		  	
+		  </div>
+
 		  <hr>
 		  <br>
 		  <br>
@@ -29,6 +36,14 @@
 		    			          <%= product.name %>
 		    			        </div>
 		    				</div>
+		    			
+		    			<div class="column is-3">
+		    			<%= link_to  edit_admin_commodity_path(product) do%>
+		    			<div class="button is-medium ">
+		    			  <i class="fa fa-pencil fa-2 " aria-hidden="true"></i>
+		    			</div>	
+		    			<% end %>	    				
+		    			</div>
 		    			</div>
 
 		    			<div>

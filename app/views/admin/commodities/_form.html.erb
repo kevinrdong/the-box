@@ -1,0 +1,48 @@
+<div class="field">
+    <%= f.label :name ,'商品名稱', class: 'label'%><br />
+      <% @product.errors.full_messages_for(:name).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %>    
+    <%= f.text_field :name, class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type_id,'商品類型', class: 'label' %>
+    <span class="select">
+    <%= f.collection_select :type_id,@types ,:id,:name %>
+    </span>  
+  </div>
+
+  <div class="field">
+    <%= f.label :price,'商品價格', class: 'label' %>
+      <% @product.errors.full_messages_for(:price).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %>  
+    <%= f.number_field :price, class: 'input', min:1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description ,'商品敘述', class: 'label'%>
+      <% @product.errors.full_messages_for(:description).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %>
+    <%= f.text_area :description, class: 'input'%>
+  </div>
+  <div class="field">
+  <%= f.label :pictures,'圖片' ,class:'label'%>
+      <% @product.errors.full_messages_for(:pictures).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %>
+  <div class="form-group">
+  <img id="img_prev" width=300 height=300 src="#" alt="請選擇照片" class="img-thumbnail hidden"/> <br/>
+  <span class="btn btn-default btn-file">
+  <%= f.file_field :pictures, id: "avatar-upload" %>
+  </span>
+  <%= f.hidden_field :pictures_cache %>   
+  </div>
+</div>
+  <%= f.submit "確認" ,class:"button is-light"%>
+  <% if params[:action] == 'edit' %>
+    <%= link_to '刪除',admin_commodity_path(@product),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger'%>
+  <% end %>  
+ 

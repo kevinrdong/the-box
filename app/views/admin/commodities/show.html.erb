@@ -1,0 +1,18 @@
+<section class="section">
+	<div class="container">
+		<div class="title is-1"> <%= @product.name %> </div>
+		<div class="column has-text-centered">
+ 			<%= image_tag @product.pictures %>
+        </div>
+        <br>
+        <div class="colum is-size-3 has-text-weight-semibold">
+        	價格:<%= @product.price %> 
+        </div>
+        <div class="colum is-size-3 has-text-weight-semibold">
+        	敘述:
+        </div>
+		<div class="column is-size-4">
+			<%= @product.description %> 
+		</div>
+	</div>
+</section>

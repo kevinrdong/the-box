@@ -10,7 +10,11 @@
   </head>
 
   <body>
+    <% if params[:controller] == 'products'%>
   	<%= render "navbar" %>
+    <% else %>
+    <%= render "admin_navbar" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -5,10 +5,15 @@ Rails.application.routes.draw do
 	resource :products ,only:[:index,:show]
 
 	namespace :admin , path:"leanne" do
-		resource :products
+		 resources :commodities
+		 resources :designers
+		 get '/newtype'    => 'commodities#makenewtype'
+		 post '/newtype'   => 'commodities#newtype'
+		 delete '/newtype/:id' => 'commodities#destroy_type'
 	end
 
-get '/brand' => 'products#brand' 
-get '/designers' => 'products#designers'
-get '/contact' => 'products#contact'
+		 get '/brand'     => 'products#brand' 
+		 get '/designers' => 'products#designers'
+		 get '/contact'   => 'products#contact'
+
 end

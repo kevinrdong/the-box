@@ -4,13 +4,17 @@ class ProductsController < ApplicationController
 	def index	
 	end
 
-	def show	
+	def show
+
+		@types = Type.includes(:products)
+		
 	end
 
 	def brand	
 	end
 
-	def dsigners		
+	def designers	
+		@designers = Designer.all	
 	end
 
 	def contact	
