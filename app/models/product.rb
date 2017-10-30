@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
 
-	mount_uploaders :pictures, PictureUploader
-
+	mount_uploader :pictures, PictureUploader
+	
 	belongs_to :type 
 	has_many :ordered_items
 	has_many :orders, through: :ordered_items 
