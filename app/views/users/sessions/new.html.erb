@@ -1,13 +1,18 @@
-<h2>Log in</h2>
-
+<div class="columns">
+  <div class="column  is-2 is-offset-5">
+    <br>
+    <br>
+    <br>
+    <h1 class="title has-text-centered">登入</h1>
+    <div class="box">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email ,'信箱:'%><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password ,'密碼:'%><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
@@ -18,9 +23,21 @@
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+
+    <%= f.submit "登入" ,class:'button'%>
+
+    <%= link_to '註冊',new_user_registration_path ,class:'button'%>
 <% end %>
 
-<%= render "users/shared/links" %>
+    </div>
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+

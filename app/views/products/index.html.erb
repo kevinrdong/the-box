@@ -1,0 +1,49 @@
+<section class="section">
+	<div class="container">
+		<h1 class="title has-text-centered">商品列表</h1>
+		<% @types.each do |type| %>
+		  <br>	
+		  <div class="column">
+		  <div class="title">
+		  	 <%= type.name%>
+		  </div>		  	
+		  </div>		  	
+		  <hr>
+		  <br>
+		  <br>
+		  <div class="columns">
+		  	<% type.products.each do |product| %>
+		    <div class="column is-3">
+		    	<div class="card">
+		    		<div class="card-image">
+		    			<figure class="image 256X256">
+		    				<%= link_to  product_path(product) do%>
+		    				<%= image_tag product.pictures %>
+		    				<% end %>
+		    			</figure>
+		    		</div>
+		    		<div class="card-content">
+		    			<div class="columns is-5">
+		    				<div class="column">
+		    					<div class="title">
+		    			          <%= product.name %>
+		    			        </div>		   
+		    				</div>
+		    			</div>
+
+		    			<div>
+		    			  售價 : $<%= product.price %>
+		    			</div>
+		    			<div>
+		    			  <%=truncate product.description, length: 50, omission:'...'%>
+		    			</div>	    			
+		    		</div>
+		    	</div>
+		    </div>
+		  <% end %>
+		  </div>
+		  
+		<% end %>
+
+	</div>
+</section>

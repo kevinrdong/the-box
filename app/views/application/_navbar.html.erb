@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item">
+          <a class="navbar-item" href="/">
             <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
           </a>
           <span class="navbar-burger burger" data-target="navbarMenuHeroB">
@@ -21,10 +21,11 @@
           <div class="navbar-end">
           <% if current_user %>
              <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %> 
+             <%= link_to '訂單紀錄',detail_path,class:"navbar-item" %>
           <% else %>
             <%= link_to '登入',new_user_session_path ,class:"navbar-item" %>            
           <% end %>  
-            <%= link_to '下訂單',root_path,class:"navbar-item"%>            
+            <%= link_to '下訂單',orders_path,class:"navbar-item"%>            
           </div>
         </div>
       </div>
@@ -46,14 +47,11 @@
   <nav class="tabs is-boxed is-fullwidth">
     <div class="container">
       <ul>
-        <li class="<%= 'is-active'if current_page?'/' %>">
-          <%= link_to '首頁',root_path %>
+        <li class="<%= 'is-active'if current_page?brand_path %>">
+          <%= link_to '牌品',brand_path %>
         </li>
         <li class="<%= 'is-active'if current_page?products_path %>">
           <%= link_to '商品',products_path %>
-        </li>
-        <li class="<%= 'is-active'if current_page?brand_path %>">
-          <%= link_to '牌品',brand_path %>
         </li>
         <li class="<%= 'is-active'if current_page?designers_path %>">
           <%= link_to '設計師',designers_path %>

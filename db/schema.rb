@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024040151) do
+ActiveRecord::Schema.define(version: 20171030092250) do
 
   create_table "designers", force: :cascade do |t|
     t.string "image"
@@ -20,15 +20,27 @@ ActiveRecord::Schema.define(version: 20171024040151) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.string "description"
-    t.string "pictures"
+  create_table "ordered_items", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+    t.integer "quantities", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "type_id"
+    t.index ["order_id"], name: "index_ordered_items_on_order_id"
+    t.index ["product_id"], name: "index_ordered_items_on_product_id"
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "pay", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "option"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+# Could not dump table "products" because of following StandardError
+#   Unknown type 'json' for column 'pictures'
 
   create_table "types", force: :cascade do |t|
     t.string "name"

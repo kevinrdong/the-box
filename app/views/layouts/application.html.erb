@@ -10,10 +10,10 @@
   </head>
 
   <body>
-    <% if params[:controller] == 'products'%>
-  	<%= render "navbar" %>
+    <% if params[:controller] == 'commodities' || params[:controller] == 'designers'%>
+  	<%= render "admin_navbar" %>
     <% else %>
-    <%= render "admin_navbar" %>
+    <%=  render "navbar"%>
     <% end %>
     <%= yield %>
   </body>

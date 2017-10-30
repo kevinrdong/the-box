@@ -1,0 +1,53 @@
+<section class="section">
+	<div class="container">
+		<p class="title has-text-success "><%= flash[:note] %></p>		
+
+		<h1 class="title has-text-centered">訂單紀錄</h1>
+
+		<% @orders.each do |order| %>
+		<div class="box">
+		<div class="columns">
+			<div class="column">
+              訂單編號: 
+              <div class="title">
+              	<%= order.id %>
+              </div>	
+			</div>
+			<div class="column">
+						訂單商品:
+					  <% order.ordered_items.each do |ordered_item| %>					
+				<div class="columns">
+				
+					<div class="column">		               
+					   <div class="title">
+					   <%= ordered_item.product.name %>
+		   	
+					   </div>
+					</div>				
+					<div class="column">
+						<div class="title">
+						<%= ordered_item.quantities %>個								
+						</div>
+					</div>	
+				</div>	
+				<% end %>		  
+			</div>
+			<div class="column has-text-right">
+			   訂單金額:
+			   <div class="title">
+			   <%= order.total %>	元		   	
+			   </div>
+			</div>
+		</div>
+		<% if !order.option.empty? %>
+			<div class="column">
+				備註:
+				<br>
+				<%= simple_format order.option%>
+			</div>
+		<% end %>
+		</div>
+		<% end %>			
+		</div>
+	
+</section>

@@ -26,7 +26,7 @@
       <% @product.errors.full_messages_for(:description).each do |msg| %>
         <p class="help is-danger"><%= msg %></p>
       <% end %>
-    <%= f.text_area :description, class: 'input'%>
+    <%=f.text_area :description,class: 'textarea'%>
   </div>
   <div class="field">
   <%= f.label :pictures,'圖片' ,class:'label'%>
@@ -36,7 +36,7 @@
   <div class="form-group">
   <img id="img_prev" width=300 height=300 src="#" alt="請選擇照片" class="img-thumbnail hidden"/> <br/>
   <span class="btn btn-default btn-file">
-  <%= f.file_field :pictures, id: "avatar-upload" %>
+  <%= f.file_field :pictures,multiple: true , id: "avatar-upload" %>
   </span>
   <%= f.hidden_field :pictures_cache %>   
   </div>
