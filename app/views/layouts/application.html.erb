@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <% if params[:controller] == 'admin/commodities' || params[:controller] == 'admin/designers'%>
+    <% if params[:controller] == 'admin/commodities' || params[:controller] == 'admin/designers'|| params[:controller] == 'admin/details'%>
   	<%= render "admin_navbar" %>
     <% else %>
     <%= render "navbar"%>

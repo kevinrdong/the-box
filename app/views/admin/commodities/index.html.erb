@@ -1,8 +1,11 @@
 <section class="section">
 	<div class="container">
+		<br>
 		<h1 class="title has-text-centered">商品列表</h1>
 		<% @types.each do |type| %>
 		  <br>	
+		  <br>
+		  <br>
 		  <div class="columns">
 		  <div class="column">
 		  <div class="title">
@@ -23,7 +26,7 @@
 		    <div class="column is-3">
 		    	<div class="card">
 		    		<div class="card-image">
-		    			<figure class="image 256X256">
+		    			<figure class="image is-318x318">
 		    				<%= link_to  admin_commodity_path(product) do%>
 		    				<%= image_tag product.pictures%>
 		    				<% end %>

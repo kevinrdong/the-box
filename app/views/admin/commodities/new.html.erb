@@ -1,9 +1,12 @@
+<section class="section">
+	<div class="container">
 <div class="columns">
-  <div class="column  is-4 is-offset-4">
-    <br>
-    <br>   
+  <div class="column  is-4 is-offset-4"> 
     <br>
     <h1 class="title has-text-centered">新增商品</h1>
+    <br>
+    <br>
+    <br>
     <div class="box">
 <%= form_for @product ,url:admin_commodities_path do |f| %>
   <%= render 'form',f:f %>
@@ -11,7 +14,10 @@
     </div>
 
   </div>
-</div>
+</div>		
+	</div>
+</section>
+
 
 
 

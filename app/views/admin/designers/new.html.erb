@@ -1,10 +1,13 @@
+<section class="section">
+	<div class="container">	
 <div class="columns">
-  <div class="column  is-4 is-offset-4">
-    <br>
-    <br>   
+  <div class="column  is-4 is-offset-4">   
     <br>
     <h1 class="title has-text-centered">新增設計師</h1>
     <div class="box">
+        <br>
+        <br>
+        <br>
 <%= form_for @designer ,url: admin_designers_path do |f| %>
   <%= render 'form',f:f %>
 <% end %>
@@ -12,6 +15,9 @@
 
   </div>
 </div>
+	</div>
+</section>
+
 
 
 

@@ -95,7 +95,7 @@ class ProductsController < ApplicationController
 	end
 
 	def detail
-		@orders = Order.includes(:ordered_items,:products).where('pay=?',0)
+		@orders = Order.includes(:ordered_items,:products).where(['pay=? and user_id=?',0,current_user])
 	end
 
 

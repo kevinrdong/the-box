@@ -1,5 +1,6 @@
 <section class="section">
 	<div class="container">
+		<br>	
 		<h1 class="title has-text-centered">商品列表</h1>
 		<% @types.each do |type| %>
 		  <br>	
@@ -16,7 +17,7 @@
 		    <div class="column is-3">
 		    	<div class="card">
 		    		<div class="card-image">
-		    			<figure class="image 256X256">
+		    			<figure class="image is-318x318">
 		    				<%= link_to  product_path(product) do%>
 		    				<%= image_tag product.pictures %>
 		    				<% end %>

@@ -15,16 +15,16 @@
         <div id="navbarMenuHeroB" class="navbar-menu">
           <% if current_user %>
           <div class="navbar-item">
-            <p>Welcome <%= current_user.email %></p>
+            <p>Welcome 管理員:<%= current_user.email %></p>
           </div>
           <% end %>
           <div class="navbar-end">
           <% if current_user %>
-             <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %> 
+             <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %>   
+             <%= link_to '顧客訂單',admin_details_path,class:"navbar-item" %>   
           <% else %>
             <%= link_to '登入',new_user_session_path ,class:"navbar-item" %>            
-          <% end %>  
-            <%= link_to '看訂單',root_path,class:"navbar-item"%>            
+          <% end %>      
           </div>
         </div>
       </div>
@@ -57,10 +57,7 @@
         </li>
         <li class="<%= 'is-active'if current_page?designers_path %>">
           <%= link_to '設計師列表',admin_designers_path %>
-        </li>        
-        <li class="<%= 'is-active'if current_page?contact_path %>">
-          <%= link_to '新增聯絡方式',contact_path %>
-        </li>          
+        </li>               
       </ul>
     </div>
   </nav>
