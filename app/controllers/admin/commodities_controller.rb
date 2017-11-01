@@ -1,5 +1,6 @@
 class Admin::CommoditiesController < ApplicationController
-	before_action :authenticate_user!	
+	before_action :authenticate_user!
+	before_action :authenticate_admin	
 	before_action :set_commodity , only: [:edit,:update,:destroy,:show]
 	before_action :set_types, only: [:index,:edit,:create]
 	
@@ -76,6 +77,14 @@ class Admin::CommoditiesController < ApplicationController
 
 
 private
+
+	def authenticate_admin
+		if current_user.admin?
+			redirect_to admin_commodities_path
+		else
+			redirect_to products_path
+		end
+	end
 
 	def product_params
 		params.require(:product).permit(:name,:price,:description,:pictures,:type_id)		

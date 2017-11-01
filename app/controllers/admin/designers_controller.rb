@@ -1,5 +1,6 @@
 class Admin::DesignersController < ApplicationController
 	before_action :authenticate_user!
+	before_action :authenticate_admin
 	before_action :set_designer ,only:[:edit,:update,:destroy]
 
 	def new
@@ -40,6 +41,15 @@ class Admin::DesignersController < ApplicationController
 	end
 	
 private
+
+
+	def authenticate_admin
+		if current_user.admin?
+			redirect_to admin_commodities_path
+		else
+			redirect_to products_path
+		end
+	end
 
 	def set_designer
 		@designer = Designer.find params[:id]
