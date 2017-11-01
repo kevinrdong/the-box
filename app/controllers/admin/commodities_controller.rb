@@ -1,5 +1,5 @@
 class Admin::CommoditiesController < ApplicationController
-	
+	before_action :authenticate_user!	
 	before_action :set_commodity , only: [:edit,:update,:destroy,:show]
 	before_action :set_types, only: [:index,:edit,:create]
 	
