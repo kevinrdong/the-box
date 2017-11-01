@@ -1,5 +1,5 @@
 class Admin::DesignersController < ApplicationController
-
+	before_action :authenticate_user!
 	before_action :set_designer ,only:[:edit,:update,:destroy]
 
 	def new
