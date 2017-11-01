@@ -14,9 +14,7 @@ private
 
 
 	def authenticate_admin
-		if current_user.admin?
-			redirect_to admin_commodities_path
-		else
+   		unless current_user.admin
 			redirect_to products_path
 		end
 	end
