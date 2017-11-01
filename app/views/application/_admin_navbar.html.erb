@@ -20,6 +20,10 @@
           <% end %>
           <div class="navbar-end">
           <% if current_user %>
+             <% if current_user.admin? %>
+             <div class="tag is-warning ">管理員視角</div>
+             <%= link_to '切換視角',root_path,class:" navbar-item has-text-danger has-text-weight-bold" %>  
+             <% end %> 
              <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %>   
              <%= link_to '顧客訂單',admin_details_path,class:"navbar-item" %>   
           <% else %>

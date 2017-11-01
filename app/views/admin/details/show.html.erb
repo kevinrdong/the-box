@@ -21,7 +21,7 @@
 				
 					<div class="column">		               
 					   <div class="title">
-					   	<%= link_to product_path(ordered_item) do %>
+					   	<%= link_to admin_commodity_path(ordered_item.product) do %>
 					   <%= ordered_item.product.name %>
 		   				<% end %>
 					   </div>

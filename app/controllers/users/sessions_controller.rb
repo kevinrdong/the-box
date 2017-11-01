@@ -8,7 +8,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
    def create
-
+    
      if current_user.admin?
       redirect_to admin_commodities_path
     else
