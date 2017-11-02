@@ -8,12 +8,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
    def create
-    
-     if current_user.admin?
-      redirect_to admin_commodities_path
-    else
-      super
-    end
+    super
    end
 
   # DELETE /resource/sign_out
@@ -21,10 +16,12 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+
 end
