@@ -8,8 +8,9 @@
         </div>
     <% else %>
         <div class="<%= flash_class(key) %>">                                  
-                帳號或密碼錯誤
-
+            <% if value %>
+                 帳號或密碼錯誤
+            <% end %>
         </div>
     <% end %>
 <% end %>
