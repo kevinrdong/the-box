@@ -21,30 +21,44 @@
 				    <div class="column is-3">
 				    	<div class="card">
 				    		<div class="card-image">
-				    			<figure class="image is-318x318">
+				    			<figure class="image is-318x318 is-hidden-mobile">
 				    				<%= link_to  product_path(product) do%>
 				    				<%= image_tag product.pictures %>
 				    				<% end %>
 				    			</figure>
+				    			<figure class="image is-272x272 is-hidden-desktop">
+				    				<%= link_to  product_path(product) do%>
+				    				<%= image_tag product.pictures %>
+				    				<% end %>
+				    			</figure>				    			
 				    		</div>
-				    		<div class="card-content">
-				    			<div class="columns is-5">
-				    				<div class="column">
-				    					<div class="title">
-				    			          <%= product.name %>
-				    			        </div>		   
-				    				</div>
-				    			</div>
-
+		    		<div class="card-content">
+		    			<div class="columns is-5">
+		    				<div class="column">
+		    					<div class="title">
+		    			          <%= product.name %>
+		    			        </div>
+		    				</div>
+		    			</div>
+						  <div class="column">					  	
+							<div class="columns">
 								<div class="column">
-									售價 : $<%= product.price %>
-								</div>					  	
+									售價 : 
+									<div class="title is-size-4">
+									 NT$<%= product.price %>										
+									</div>
+								</div>
+
+							</div>						  	
+						  </div>
 
 
 							<div class="column">
-								敘述 : <%=truncate product.description, length: 50, omission:'...'%>
-							</div>	    			
-						   </div>
+								敘述 : 
+								<br>
+								<%=truncate product.description, length: 50, omission:'...'%>
+							</div>			
+		    		</div>
 				    	</div>
 				    </div>			  		
 			  	<% end %>

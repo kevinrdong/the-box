@@ -1,11 +1,11 @@
 <section class="section">
 	<div class="container">	
 		<br>
-		<h1 class="title has-text-centered"><%= @user.email %>的訂單紀錄</h1>
+		<h1 class="title is-size-6-mobile has-text-centered "><%= @user.email %> <br>的訂單紀錄</h1>
 		<br>
 		<br>
 		<br>
-		<% @orders.each do |order| %>
+		<% @orders.order(id: :desc).each do |order| %>
 		<% if !order.cancel %>
 		<%= link_to '取消訂單',admin_detail_order_path(@user,order),method: :delete,data: {confirm:'要取消嘛？'},class:'button is-danger is-outlined' %>
 		<% else %>

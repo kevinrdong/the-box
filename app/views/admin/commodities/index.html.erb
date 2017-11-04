@@ -6,19 +6,17 @@
 		  <br>	
 		  <br>
 		  <br>
-		  <div class="columns">
-		  <div class="column">
-		  <div class="title">
-		  	 <%= type.name%>
-		  </div>		  	
-		  </div>
 
-		  <div class="colum is-right">
-		  	<%= link_to '刪除',admin_path(type.id),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger '%>
-		  </div>		  	
+		  <div class="column ">
+			  <div class="title ">
+			  	 <%= type.name%>
+			  </div>		  			  	
 		  </div>
 
 		  <hr>
+		  <div class="column has-text-right">
+		  	<%= link_to '刪除',admin_path(type.id),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger '%>
+		  </div>		  
 		  <br>
 		  <br>
 		  <div class="columns">
@@ -26,9 +24,14 @@
 		    <div class="column is-3">
 		    	<div class="card">
 		    		<div class="card-image">
-		    			<figure class="image is-318x318">
+		    			<figure class="image is-318x318 is-hidden-mobile">
 		    				<%= link_to  admin_commodity_path(product) do%>
-		    				<%= image_tag product.pictures%>
+		    				<%= image_tag product.pictures %>
+		    				<% end %>
+		    			</figure>
+		    			<figure class="image is-272x272 is-hidden-desktop">
+		    				<%= link_to  admin_commodity_path(product) do%>
+		    				 <%= image_tag product.pictures %>
 		    				<% end %>
 		    			</figure>
 		    		</div>
@@ -48,29 +51,22 @@
 		    			<% end %>	    				
 		    			</div>
 		    			</div>
-
-		    			<div>
-		    			<div class="column ">
-						  <div class="column">
-							<div class="columns">
-								<div class="column">
-									售價 : $<%= product.price %>
-								</div>
-								<div class="column has-text-right">
-									<% if !product.shelve %>
-										<p class="button is-danger is-outlined">已下架</p>
-									<% end %>
-								</div>
-							</div>						  	
-						  </div>
-
-
-							<div class="column">
-								敘述 : <%=truncate product.description, length: 50, omission:'...'%>
+						<div class="column">
+							售價 : 
+							<div class="title is-size-4">
+							 NT$<%= product.price %>										
 							</div>
-		    			</div>
-
-		    			</div>    			
+						</div>
+						<div class="column">
+							敘述 : 
+							<br>
+							<%=truncate product.description, length: 50, omission:'...'%>
+						</div>
+						<div class="column has-text-right">
+							<% if !product.shelve %>
+								<p class="button is-danger ">已下架</p>
+							<% end %>
+						</div>										
 		    		</div>
 		    	</div>
 		    </div>

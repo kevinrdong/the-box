@@ -22,18 +22,24 @@
 		  <br>
 		  <div class="columns">
 		    <div class="column is-3">
-		    			<figure class="image is-200x200" >
-		    				<%= image_tag designer.image ,style:'border-radius: 50%'%>
-		    			</figure>
+		    	<figure class="image is-200x200 is-hidden-mobile" >
+		    		<%= image_tag designer.image ,style:'border-radius: 50%'%>
+		    	</figure>
+		    	<figure class="image is-256x256 is-hidden-desktop" >
+		    		<%= image_tag designer.image ,style:'border-radius: 50%'%>
+		    	</figure>	
 		    </div>	    		  			
-	    	<div class="column ">
-	    				  <div class="title">
-		  	 <%= designer.name%>
-		  </div>
-				<div class="card-content">
+			<div class="column">
+	    		<div class="title ">
+		  	 		<%= designer.name%>
+		     	</div>
+	    		<div class="is-size-4 has-text-weight-semibold ">
+		  	 		設計師簡介:
+		     	</div>		     	
+				<div class=" is-size-5">
 	    			  <%=simple_format  designer.description%>
 		    	</div>
-		    </div>  
+		    </div>   
 	      </div>
 	      <% end %>
 </section>

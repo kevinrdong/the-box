@@ -82,7 +82,10 @@
 	 	  <div class="column">
 	 	   <%= link_to '繼續逛街去~' ,products_path ,class:'button is-success  is-outlined '%>
 	 	  </div>
-	 	  <div class="column has-text-left">
+	 	  <div class="column has-text-left is-hidden-mobile">
+	 	   <%= order.submit '結帳囉！' ,class:'button is-danger  is-outlined '%>	 
+	 	  </div>
+	 	  <div class="column has-text-right is-hidden-desktop">
 	 	   <%= order.submit '結帳囉！' ,class:'button is-danger  is-outlined '%>	 
 	 	  </div>		
 	 	</div>
