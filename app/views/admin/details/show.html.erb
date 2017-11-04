@@ -7,7 +7,7 @@
 		<br>
 		<% @orders.each do |order| %>
 		<% if !order.cancel %>
-		<%= link_to '取消訂單',admin_detail_order_path(current_user,order),method: :delete,data: {confirm:'要取消嘛？'},class:'button is-danger is-outlined' %>
+		<%= link_to '取消訂單',admin_detail_order_path(@user,order),method: :delete,data: {confirm:'要取消嘛？'},class:'button is-danger is-outlined' %>
 		<% else %>
 		<div class="button is-danger">
 			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 取消

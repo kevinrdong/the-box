@@ -4,10 +4,10 @@ class Admin::OrderController < ApplicationController
 
 
 	def destroy
-		order = Order.where('user_id=?',current_user).find(params[:id])
+		order = Order.where('user_id=?',params[:detail_id]).find(params[:id])
 		order.cancel = true
 		if order.save
-			redirect_to admin_detail_path(current_user)
+			redirect_to admin_detail_path(params[:detail_id])
 		end
 	end
 
