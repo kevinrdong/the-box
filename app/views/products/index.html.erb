@@ -7,10 +7,12 @@
 		  <br>	
 		  <div class="column">
 		  <div class="title">
-		  	 <%= type.name%>
+		  	<% if type.products.find_by(shelve:true) %>
+				<%= type.name%>	  		
 		  </div>		  	
 		  </div>		  	
 		  <hr>
+		<% end %>		  
 		  <br>
 		  <br>
 		  <div class="columns">
