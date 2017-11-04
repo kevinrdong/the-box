@@ -43,6 +43,7 @@
 </div>
   <%= f.submit "確認" ,class:"button is-light"%>
   <% if params[:action] == 'edit' %>
-    <%= link_to '刪除',admin_commodity_path(@product),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger'%>
+  <%= link_to '刪除',admin_commodity_path(@product),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger'%>
+  <%= link_to '下架',admin_path(@product),method: :post,data: {confirm:'要下架嘛？'},class:'button is-warning'%>
   <% end %>  
  

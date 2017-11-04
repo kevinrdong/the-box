@@ -6,6 +6,14 @@
 		<br>
 		<br>
 		<% @orders.each do |order| %>
+		<% if !order.cancel %>
+		<%= link_to '取消訂單',admin_detail_order_path(current_user,order),method: :delete,data: {confirm:'要取消嘛？'},class:'button is-danger is-outlined' %>
+		<% else %>
+		<div class="button is-danger">
+			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 取消
+		</div>			
+		<% end %>
+
 		<div class="box">
 		<div class="columns">
 			<div class="column">
@@ -43,13 +51,17 @@
 		</div>
 		<hr>
 		<div class="columns">
-		<% if !order.option.empty? %>
 			<div class="column">
 				備註:
 				<br>
 				<%= simple_format order.option%>
 			</div>
-		<% end %>
+			<div class="column">
+				寄件地址:
+				<div class="has-text-weight-bold">				
+				<%= simple_format order.address%>
+			    </div>
+			</div>
 		    <div class="column has-text-right">
 				下單日期:
 				<div class="has-text-weight-bold">

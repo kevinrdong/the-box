@@ -1,22 +1,37 @@
 <section class="section">
 	<div class="container">
-		<div class="title is-1"> <%= @product.name %> </div>
-		<div class="column has-text-centered">
- 			<%= image_tag @product.pictures %>
+        <div class="columns">
+        <div class="column is-5 has-text-centered" >
+          <div class="card-image">
+            <figure class="image is-512x512 is-hidden-mobile">
+                <%= image_tag @product.pictures %>
+            </figure> 
+            <figure class="image is-256x256 is-hidden-desktop">
+                <%= image_tag @product.pictures %>
+            </figure>  
+          </div>         
         </div>
 
-        <br>
-        <div class="colum is-size-3 has-text-weight-semibold">
-        	價格:<%= @product.price %> 
+        <div class="column">
+              <div class="title is-1"> <%= @product.name %> </div>                
+                <div class="column is-size-3 has-text-weight-semibold">
+                    價格:<%= @product.price %> 
+                </div>
+                <div class="column ">
+                 <%= link_to '我要購買',order_path,class:'button is-danger'%>               
+                </div>
+                <div class="column is-size-3 has-text-weight-semibold">
+                    敘述:
+                </div>
+                <div class="column is-size-4">
+                    <%=simple_format  @product.description %> 
+                </div>     
+                <div class="column has-text-right">
+                 <%= link_to '上一頁',:back,class:'button is-info  '%>               
+                </div>            
         </div>
-        <div class="has-text-right">
-         <%= link_to '我要購買',order_path,class:'button is-danger is-large'%>               
+           
         </div>
-        <div class="colum is-size-3 has-text-weight-semibold">
-        	敘述:
-        </div>
-		<div class="column is-size-4">
-			<%=simple_format  @product.description %> 
-		</div>
+
 	</div>
 </section>

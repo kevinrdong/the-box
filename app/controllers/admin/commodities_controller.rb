@@ -1,7 +1,7 @@
 class Admin::CommoditiesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :authenticate_admin	
-	before_action :set_commodity , only: [:edit,:update,:destroy,:show]
+	before_action :set_commodity , only: [:edit,:update,:destroy,:show,:undershelve]
 	before_action :set_types, only: [:index,:edit,:create]
 	
 	def index				
@@ -70,6 +70,19 @@ class Admin::CommoditiesController < ApplicationController
 		end
 
 	end
+
+	def undershelve
+
+		unshelve= {shelve:false}
+		if @product.update unshelve
+
+			redirect_to admin_commodities_path
+			
+		end
+
+	end
+
+
 
 	def show
 		

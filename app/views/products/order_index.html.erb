@@ -64,10 +64,27 @@
 	<div class="columns">
 	 <div class="column has-text-right">
 	 	<%= form_for @order,url:option_path do |order| %>
-	 	<%= order.text_area :option ,class: 'textarea',placeholder:'若有其他備註請輸入於此...' %>
-	 	<div class="column">
-	 	<%= link_to '繼續逛街去~' ,products_path ,class:'button is-success is-large is-outlined '%>
-	 	<%= order.submit '結帳囉！' ,class:'button is-danger is-large is-outlined '%>	 		
+	 	<div class="column has-text-left">
+	 	  <div class="title">
+	 	   寄件地址：	             <p class="help is-danger">(*必填)</p> 	  	
+	 	  </div>
+
+	 	  <%= order.text_field :address ,class: 'input',placeholder:'請輸入寄件地址於此...'%>	 		
+	 	</div>
+		<div class="column has-text-left">
+	 	  <div class="title">
+	 	   備註：	 	  	
+	 	  </div>			
+	 	  <%= order.text_area :option ,class: 'textarea',placeholder:'若有其他備註請輸入於此...' %>			
+		</div>
+
+	 	<div class="columns">
+	 	  <div class="column">
+	 	   <%= link_to '繼續逛街去~' ,products_path ,class:'button is-success  is-outlined '%>
+	 	  </div>
+	 	  <div class="column has-text-left">
+	 	   <%= order.submit '結帳囉！' ,class:'button is-danger  is-outlined '%>	 
+	 	  </div>		
 	 	</div>
 	 	<% end %>
 	 </div>

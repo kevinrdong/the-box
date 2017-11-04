@@ -25,8 +25,8 @@ class ProductsController < ApplicationController
 
 		user = current_user
 
-		if order = Order.find_by(pay:1)
-			order = Order.find_by(pay:1)
+		if order = Order.where('user_id=?',user).find_by(pay:1)
+			order = Order.where('user_id=?',user).find_by(pay:1)
 		else
 		    order = user.orders.create
 		end		
@@ -48,8 +48,8 @@ class ProductsController < ApplicationController
 	def order_index
 
 		user = current_user
-		if @order = Order.find_by(pay:1)
-			@order = Order.find_by(pay:1)
+		if @order = Order.where('user_id=?',user).find_by(pay:1)
+			@order = Order.where('user_id=?',user).find_by(pay:1)
 		else
 		    @order = user.orders.create
 		end		
@@ -77,21 +77,26 @@ class ProductsController < ApplicationController
 	end
 
 	def option
-		order = Order.find_by(pay:1)
-		if order.total !=0
-			if order.update order_params
-				order.pay = 0
-				order.save
-				flash[:note]="訂單已成立！"
-				redirect_to detail_path
+		order = Order.where('user_id=?',current_user).find_by(pay:1)
+		
+		if order.nil?
+			redirect_to products_path 
+			flash[:note]="請重新選購商品！"
+		else		
+			if order.total !=0
+				if order.update order_params
+					order.pay = 0
+					order.save
+					flash[:note]="訂單已成立！"
+					redirect_to detail_path
+				else
+					redirect_to orders_path
+				end	
 			else
-				render orders_path
-			end	
-		else
-			flash[:note]="請先購買商品！"
-			redirect_to orders_path		
+				flash[:note]="請先購買商品！"
+				redirect_to orders_path		
+			end
 		end
-
 	end
 
 	def detail
@@ -105,6 +110,6 @@ private
 	end
 
 	def order_params
-	params.require(:order).permit(:option,:pay)
+	params.require(:order).permit(:option,:pay,:address)
 	end
 end

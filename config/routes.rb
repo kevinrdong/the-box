@@ -8,10 +8,14 @@ Rails.application.routes.draw do
 	namespace :admin , path:"leanne" do
 		 resources :commodities
 		 resources :designers
-		 resources :details,only:[:index,:show]
+		 resources :details,only:[:index,:show,:destroy] do
+		 	resources :order,only:[:destroy]
+		 end
+		 post   '/commodities/:id'  =>    'commodities#undershelve'
 		 get '/newtype'        => 'commodities#makenewtype'
 		 post '/newtype'       => 'commodities#newtype'
 		 delete '/newtype/:id' => 'commodities#destroy_type'
+
 
 	end
 

@@ -12,9 +12,12 @@ class Users::SessionsController < Devise::SessionsController
    end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+   def destroy
+    if order = Order.where('user_id=?',current_user).find_by(pay:1)
+      order.destroy
+    end
+     super
+   end
 
 protected
 

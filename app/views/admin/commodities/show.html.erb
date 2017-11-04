@@ -1,23 +1,46 @@
 <section class="section">
-	<div class="container">
-                <br>
-		<div class="title is-1"> <%= @product.name %> </div>
-                <br>
-                <br>
-                <br>
-		<div class="column has-text-centered">
- 			<%=  image_tag @product.pictures%>
+        <div class="container">
+        <div class="columns">
+        <div class="column is-5 has-text-centered" >
+          <div class="card-image">
+            <figure class="image is-512x512 is-hidden-mobile">
+                <%= image_tag @product.pictures %>
+            </figure> 
+            <figure class="image is-256x256 is-hidden-desktop">
+                <%= image_tag @product.pictures %>
+            </figure>  
+          </div>         
+        </div>
+
+        <div class="column">
+              <div class="title is-1"> <%= @product.name %> </div>  
+                <div class="column has-text-right">
+                <% if !@product.shelve %>
+                        <p class="button is-danger is-outlined">已下架</p>
+                <% end %>
+                </div>                           
+                <div class="column is-size-3 has-text-weight-semibold">
+                    價格:<%= @product.price %> 
+                </div>
+                <div class="column ">
+                <%= link_to  edit_admin_commodity_path(@product) do%>
+                <div class="button is-medium ">
+                  <i class="fa fa-pencil fa-2 " aria-hidden="true"></i>
+                </div>  
+                <% end %>            
+                </div>
+                <div class="column is-size-3 has-text-weight-semibold">
+                    敘述:
+                </div>
+                <div class="column is-size-4">
+                    <%=simple_format  @product.description %> 
+                </div>     
+                <div class="column has-text-right">
+                 <%= link_to '上一頁',:back,class:'button is-info  '%>               
+                </div>            
+        </div>
+           
+        </div>
 
         </div>
-        <br>
-        <div class="colum is-size-3 has-text-weight-semibold">
-        	價格:<%= @product.price %> 
-        </div>
-        <div class="colum is-size-3 has-text-weight-semibold">
-        	敘述:
-        </div>
-		<div class="column is-size-4">
-			<%= simple_format @product.description %> 
-		</div>
-	</div>
 </section>

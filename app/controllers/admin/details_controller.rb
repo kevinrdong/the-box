@@ -10,6 +10,11 @@ class Admin::DetailsController < ApplicationController
 		@orders = Order.includes(:ordered_items,:products).where(['pay=? and user_id=?',0,@user])
 	end
 
+	def cancel
+
+		
+	end
+
 private
 
 

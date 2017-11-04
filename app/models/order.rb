@@ -3,7 +3,7 @@ class Order < ApplicationRecord
 	has_many :ordered_items
 	has_many :products, through: :ordered_items 
 
-
+		validates_presence_of :address ,on: :update
 	def total
 		total = 0
 

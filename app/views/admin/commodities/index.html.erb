@@ -50,11 +50,27 @@
 		    			</div>
 
 		    			<div>
-		    			  售價 : $<%= product.price %>
+		    			<div class="column ">
+						  <div class="column">
+							<div class="columns">
+								<div class="column">
+									售價 : $<%= product.price %>
+								</div>
+								<div class="column has-text-right">
+									<% if !product.shelve %>
+										<p class="button is-danger is-outlined">已下架</p>
+									<% end %>
+								</div>
+							</div>						  	
+						  </div>
+
+
+							<div class="column">
+								敘述 : <%=truncate product.description, length: 50, omission:'...'%>
+							</div>
 		    			</div>
-		    			<div>
-		    			  <%=truncate product.description, length: 50, omission:'...'%>
-		    			</div>	    			
+
+		    			</div>    			
 		    		</div>
 		    	</div>
 		    </div>

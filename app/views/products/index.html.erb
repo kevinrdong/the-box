@@ -1,6 +1,7 @@
 <section class="section">
 	<div class="container">
 		<br>	
+		<p class="title has-text-danger "><%= flash[:note] %></p>				
 		<h1 class="title has-text-centered">商品列表</h1>
 		<% @types.each do |type| %>
 		  <br>	
@@ -14,34 +15,38 @@
 		  <br>
 		  <div class="columns">
 		  	<% type.products.each do |product| %>
-		    <div class="column is-3">
-		    	<div class="card">
-		    		<div class="card-image">
-		    			<figure class="image is-318x318">
-		    				<%= link_to  product_path(product) do%>
-		    				<%= image_tag product.pictures %>
-		    				<% end %>
-		    			</figure>
-		    		</div>
-		    		<div class="card-content">
-		    			<div class="columns is-5">
-		    				<div class="column">
-		    					<div class="title">
-		    			          <%= product.name %>
-		    			        </div>		   
-		    				</div>
-		    			</div>
+			  	<% if product.shelve %>
+				    <div class="column is-3">
+				    	<div class="card">
+				    		<div class="card-image">
+				    			<figure class="image is-318x318">
+				    				<%= link_to  product_path(product) do%>
+				    				<%= image_tag product.pictures %>
+				    				<% end %>
+				    			</figure>
+				    		</div>
+				    		<div class="card-content">
+				    			<div class="columns is-5">
+				    				<div class="column">
+				    					<div class="title">
+				    			          <%= product.name %>
+				    			        </div>		   
+				    				</div>
+				    			</div>
 
-		    			<div>
-		    			  售價 : $<%= product.price %>
-		    			</div>
-		    			<div>
-		    			  <%=truncate product.description, length: 50, omission:'...'%>
-		    			</div>	    			
-		    		</div>
-		    	</div>
-		    </div>
-		  <% end %>
+								<div class="column">
+									售價 : $<%= product.price %>
+								</div>					  	
+
+
+							<div class="column">
+								敘述 : <%=truncate product.description, length: 50, omission:'...'%>
+							</div>	    			
+						   </div>
+				    	</div>
+				    </div>			  		
+			  	<% end %>
+		    <% end %>
 		  </div>
 		  
 		<% end %>

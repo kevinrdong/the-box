@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101053120) do
+ActiveRecord::Schema.define(version: 20171104045846) do
 
   create_table "designers", force: :cascade do |t|
     t.string "image"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20171101053120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "option"
+    t.string "address"
+    t.boolean "cancel", default: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(version: 20171101053120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "type_id"
+    t.boolean "shelve", default: true
   end
 
   create_table "types", force: :cascade do |t|
