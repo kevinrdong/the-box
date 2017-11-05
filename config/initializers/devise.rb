@@ -256,9 +256,8 @@ Devise.setup do |config|
     client_options: {
       site: 'https://graph.facebook.com/v3.0',
       authorize_url: "https://www.facebook.com/v3.0/dialog/oauth",
-      :ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}
     }
-    token_params: {
+    ,token_params: {
         parse: :json
     }
 
