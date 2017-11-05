@@ -33,7 +33,7 @@ gem 'font-awesome-sass'
 # devise
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook','~> 4.0.0'
 #carrierwave
 gem 'carrierwave', '~> 1.0'
 #awesomeprint
