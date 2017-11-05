@@ -253,14 +253,10 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"],
-    scope: 'email',
-    secure_image_url: true,
-    auth_type: 'https',
-    info_fields: 'email,name,first_name,last_name',
     client_options: {
-        site: "https://graph.facebook.com/v2.3",
-        authorize_url: "https://www.facebook.com/v2.3/dialog/oauth"
-    },
+      site: 'https://graph.facebook.com/v3.0',
+      authorize_url: "https://www.facebook.com/v3.0/dialog/oauth"
+    }
     token_params: {
         parse: :json
     }
