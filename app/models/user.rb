@@ -17,6 +17,11 @@ class User < ApplicationRecord
 	    # uncomment the line below to skip the confirmation emails.
 	    # user.skip_confirmation!
 	  	end
-	   end      	
+	   end    
+
+	   def delete_access_token(auth)
+		  @graph ||= Koala::Facebook::API.new(auth.credentials.token)
+		  @graph.delete_connections(auth.uid, "permissions")
+		end  	
 
 end

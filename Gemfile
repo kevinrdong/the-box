@@ -41,6 +41,8 @@ gem 'awesome_print'
 gem 'jquery-rails'
 #fog
 gem "fog-aws"
+#koala
+gem 'koala', '~> 2.2'
 
 
 # Use Capistrano for deployment
