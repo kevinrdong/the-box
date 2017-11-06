@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find params[:id]	
+		
 		@ordered_item = OrderedItem.new
 		session['product_id']=params[:id]
 	end

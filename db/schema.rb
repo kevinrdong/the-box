@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104045846) do
+ActiveRecord::Schema.define(version: 20171106021522) do
 
   create_table "designers", force: :cascade do |t|
     t.string "image"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20171104045846) do
     t.datetime "updated_at", null: false
     t.integer "type_id"
     t.boolean "shelve", default: true
+    t.integer "designer_id"
+    t.index [nil], name: "index_products_on_designer"
+    t.index [nil], name: "index_products_on_designers"
   end
 
   create_table "types", force: :cascade do |t|

@@ -24,12 +24,12 @@
 		    <div class="column is-3">
 		    	<div class="card">
 		    		<div class="card-image">
-		    			<figure class="image is-318x318 is-hidden-mobile">
+		    			<figure class="image is-318x318 is-hidden-mobile" id="float">
 		    				<%= link_to  admin_commodity_path(product) do%>
 		    				<%= image_tag product.pictures %>
 		    				<% end %>
 		    			</figure>
-		    			<figure class="image is-272x272 is-hidden-desktop">
+		    			<figure class="image is-272x272 is-hidden-desktop" id="float">
 		    				<%= link_to  admin_commodity_path(product) do%>
 		    				 <%= image_tag product.pictures %>
 		    				<% end %>
@@ -57,16 +57,12 @@
 							 NT$<%= product.price %>										
 							</div>
 						</div>
-						<div class="column">
-							敘述 : 
-							<br>
-							<%=truncate product.description, length: 50, omission:'...'%>
-						</div>
+						<hr>
+						<% if !product.shelve %>						
 						<div class="column has-text-right">
-							<% if !product.shelve %>
 								<p class="button is-danger ">已下架</p>
-							<% end %>
-						</div>										
+						</div>	
+						<% end %>															
 		    		</div>
 		    	</div>
 		    </div>

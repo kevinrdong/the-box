@@ -18,9 +18,12 @@
                 <% if !@product.shelve %>
                         <p class="button is-danger ">已下架</p>
                 <% end %>
-                </div>                           
-                <div class="column is-size-3 has-text-weight-semibold">
-                    價格:NT$<%= @product.price %> 
+                </div>                                        
+                <div class="column is-size-4 has-text-weight-semibold">
+                    價格:
+                <div class=" is-size-3 has-text-weight-bold">
+                    NT$<%= @product.price %> 
+                </div>
                 </div>
                 <div class="column ">
                 <%= link_to  edit_admin_commodity_path(@product) do%>
@@ -35,7 +38,15 @@
                     <%=simple_format  @product.description %> 
                 </div>                    
                 </div>
-     
+                <div class="column">
+                    設計師:
+                    <div class="title is-size-4">
+                        <%= @product.designer.name %>
+                    </div>
+                    <figure class="image is-128x128 ">
+                        <%= image_tag @product.designer.image %>
+                    </figure>                    
+                </div>       
                 <div class="column has-text-right">
                  <%= link_to '上一頁',:back,class:'button is-info  '%>               
                 </div>            

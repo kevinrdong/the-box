@@ -5,6 +5,7 @@ class Product < ApplicationRecord
 	belongs_to :type 
 	has_many :ordered_items,dependent: :destroy
 	has_many :orders, through: :ordered_items 
+	belongs_to :designer
 
-	validates_presence_of :name,:price,:description,:pictures,:type_id
+	validates_presence_of :name,:price,:description,:pictures,:type_id,:designer_id
 end

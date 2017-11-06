@@ -9,6 +9,7 @@ class Admin::CommoditiesController < ApplicationController
 
 	def new
 		@types = Type.includes(:products)
+		@designers = Designer.all
 		@product = Product.new	
 	end
 
@@ -98,7 +99,7 @@ private
 	end
 
 	def product_params
-		params.require(:product).permit(:name,:price,:description,:pictures,:type_id)		
+		params.require(:product).permit(:name,:price,:description,:pictures,:type_id,:designer_id)		
 	end
 
 	def type_params

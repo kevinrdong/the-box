@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-sass'
 # devise
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth','1.6.0'
 gem 'omniauth-facebook'
 gem 'carrierwave', '~> 1.0'
 #awesomeprint

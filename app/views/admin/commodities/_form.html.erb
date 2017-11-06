@@ -7,6 +7,13 @@
   </div>
 
   <div class="field">
+    <%= f.label :designer_id,'設計師', class: 'label' %>
+    <span class="select">
+    <%= f.collection_select :designer_id,@designers,:id,:name %>
+    </span>  
+  </div>
+
+  <div class="field">
     <%= f.label :type_id,'商品類型', class: 'label' %>
     <span class="select">
     <%= f.collection_select :type_id,@types ,:id,:name %>
