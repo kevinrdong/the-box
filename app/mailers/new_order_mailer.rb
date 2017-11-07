@@ -2,7 +2,7 @@ class NewOrderMailer < ApplicationMailer
 
 	def new_order(user)
 		@user = user
-		mail(to:@user.mail ,subject:"new order")
+		mail(to:@user.email ,subject:"new order")
 		
 	end
 
