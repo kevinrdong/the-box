@@ -80,6 +80,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     fog-aws (1.4.1)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -250,6 +252,7 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   devise
+  figaro
   fog-aws
   font-awesome-sass
   jbuilder (~> 2.5)

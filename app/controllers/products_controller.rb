@@ -89,6 +89,7 @@ class ProductsController < ApplicationController
 					order.pay = 0
 					order.save
 					flash[:note]="訂單已成立！"
+					NewOrderMailer.new_order(current_user).deliver
 					redirect_to detail_path
 				else
 					redirect_to orders_path

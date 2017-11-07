@@ -43,6 +43,8 @@ gem 'jquery-rails'
 gem "fog-aws"
 #koala
 gem 'koala', '~> 2.2'
+#mailer
+gem 'figaro'
 
 
 # Use Capistrano for deployment
