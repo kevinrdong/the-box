@@ -1,1 +1,9 @@
-HELLO
+<div class="title">親愛的 <%= @user %> ,您好：</div>
+<p>感謝您對一盒的喜愛與支持，以下是您本次在一盒所買的商品:</p>
+<% @order.ordered_items.each do |ordered_item|%>
+<ol>
+	<li><%= ordered_item.product.name %> <span><%= ordered_item.quantites %>個</span> , <span>共單筆金額 <%= ordered_item.total %>元</span></li>
+</ol>
+<% end %>
+<p>本次消費總金額共 <%= @order.total %> 元</p>
+<p>謝謝您的光臨，我們會儘快完成您的訂單，若要取消訂單請再寄信告知一盒</p>

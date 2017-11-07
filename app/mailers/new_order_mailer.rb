@@ -1,8 +1,9 @@
 class NewOrderMailer < ApplicationMailer
 
-	def new_order(user)
+	def new_order(user,order)
 		@user = user
-		mail(to:@user.email ,subject:"new order")
+		@order = order
+		mail(to:@user.email ,subject:"《一盒》訂單成立")
 		
 	end
 
