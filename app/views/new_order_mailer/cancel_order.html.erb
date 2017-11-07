@@ -1,0 +1,10 @@
+<div class="title">親愛的 <%= @user.email %> ,您好：</div>
+<p>感謝您對一盒的喜愛與支持，以下是您所取消的訂單內容:</p>
+<% @order.ordered_items.each do |ordered_item|%>
+<p>訂單編號:<%= @order.id %></p>
+<ol>
+	<li><%= ordered_item.product.name %> <span><%= ordered_item.quantities %>個</span></li>
+</ol>
+<% end %>
+
+<p>謝謝您的光臨，期待您下次再度光臨一盒</p>

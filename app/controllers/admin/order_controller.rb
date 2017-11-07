@@ -5,8 +5,10 @@ class Admin::OrderController < ApplicationController
 
 	def destroy
 		order = Order.where('user_id=?',params[:detail_id]).find(params[:id])
+		user = USer.find params[:detail_id]
 		order.cancel = true
 		if order.save
+			NewOrderMailer.cancel_order(user,order).deliver
 			redirect_to admin_detail_path(params[:detail_id])
 		end
 	end
