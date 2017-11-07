@@ -1,7 +1,7 @@
 <section class="section">
 	<div class="container">
 		<br>
-		<h1 class="title has-text-centered">商品列表</h1>
+		<h1 class="title has-text-centered" style="color:hsl(141, 71%, 48%)">商品列表</h1>
 		<% @types.each do |type| %>
 		  <br>	
 		  <br>
@@ -17,8 +17,7 @@
 		  <div class="column has-text-right">
 		  	<%= link_to '刪除',admin_path(type.id),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger '%>
 		  </div>		  
-		  <br>
-		  <br>
+
 		  <div class="columns">
 		  	<% type.products.each do |product| %>
 		    <div class="column is-3">

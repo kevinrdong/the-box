@@ -1,19 +1,18 @@
 <section class="section">
 	<div class="container">	
 		<p class="title has-text-danger "><%= flash[:note] %></p>				
-		<h1 class="title has-text-centered">商品列表</h1>
+		<h1 class="title has-text-centered" style="color:hsl(141, 71%, 48%)">商品列表</h1>
 		<% @types.each do |type| %>
 		  <br>	
-		  <div class="column">
-		  <div class="title">
+		  <br>
+		  <br>
+		  <div class="title" >
 		  	<% if type.products.find_by(shelve:true) %>
-				<%= type.name%>	  		
-		  </div>		  	
+				<%= type.name%>	  			  	
 		  </div>		  	
 		  <hr>
 		<% end %>		  
-		  <br>
-		  <br>
+
 		  <div class="columns">
 		  	<% type.products.each do |product| %>
 			  	<% if product.shelve %>
