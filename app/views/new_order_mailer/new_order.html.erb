@@ -2,7 +2,7 @@
 <p>感謝您對一盒的喜愛與支持，以下是您本次在一盒所買的商品:</p>
 <% @order.ordered_items.each do |ordered_item|%>
 <ol>
-	<li><%= ordered_item.product.name %> <span><%= ordered_item.quantites %>個</span> , <span>共單筆金額 <%= ordered_item.total %>元</span></li>
+	<li><%= ordered_item.product.name %> <span><%= ordered_item.quantities %>個</span> , <span>共單筆金額 <%= ordered_item.total %>元</span></li>
 </ol>
 <% end %>
 <p>本次消費總金額共 <%= @order.total %> 元</p>
