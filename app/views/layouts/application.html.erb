@@ -10,12 +10,22 @@
   </head>
 
   <body>
+
     <% if params[:controller] == 'admin/commodities' || params[:controller] == 'admin/designers'|| params[:controller] == 'admin/details'%>
   	<%= render "admin_navbar" %>
     <% else %>
     <%= render "navbar"%>
     <% end %>
 
-    <%= yield %>
+    <div class="cssload-thecube">
+    <div class="cssload-cube cssload-c1"></div>
+    <div class="cssload-cube cssload-c2"></div>
+    <div class="cssload-cube cssload-c4"></div>
+    <div class="cssload-cube cssload-c3"></div>
+    </div>
+    <div id="rails">
+          <%= yield %>  
+    </div>
+
   </body>
 </html>
