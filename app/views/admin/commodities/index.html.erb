@@ -14,9 +14,6 @@
 		  </div>
 
 		  <hr>
-		  <div class="column has-text-right">
-		  	<%= link_to '刪除',admin_path(type.id),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger '%>
-		  </div>		  
 
 		  <div class="columns">
 		  	<% type.products.each do |product| %>
