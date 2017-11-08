@@ -34,7 +34,8 @@ figure{
 overflow:hidden;
 }
 
-.is-3by2{height: 100%;}
+&.is-3by2{
+height: 100%;}
 
   
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
