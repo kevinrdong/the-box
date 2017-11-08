@@ -40,7 +40,7 @@ class Admin::CommoditiesController < ApplicationController
 	end
 
 	def create
-		
+		@designers = Designer.all
 		@product = Product.create product_params
 		
 		if @product.save

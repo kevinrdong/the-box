@@ -35,16 +35,16 @@ gem 'devise'
 gem 'omniauth','1.6.0'
 gem 'omniauth-facebook'
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 #awesomeprint
 gem 'awesome_print'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'jquery-rails'
 #fog
 gem "fog-aws"
-#koala
-gem 'koala', '~> 2.2'
 #mailer
 gem 'figaro'
+
 
 
 # Use Capistrano for deployment
