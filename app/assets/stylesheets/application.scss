@@ -20,6 +20,7 @@
  @import "font-awesome";
  @import "bulma/sass/utilities/_all";
  @import "bulma/sass/elements/_all";
+ @import "bulma/sass/base/_all";
 
 $success:rgb(54,133,12);
 $danger:hsl(348, 100%, 50%);
@@ -27,7 +28,11 @@ $dimensions: 16 24 32 48 64 96 128 200 230 256 272 318 512 650;
 
 img{
   display: block;
-  height: 100%};
+  height: 100%}
+
+figure{
+overflow:hidden;
+}
   
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
