@@ -22,12 +22,12 @@
 		    		<div class="card-image">
 		    			<figure class="image is-318x318 is-hidden-mobile" id="float">
 		    				<%= link_to  admin_commodity_path(product) do%>
-		    				<%= image_tag product.pictures_url(:thumb) %>
+		    				<%= image_tag product.pictures%>
 		    				<% end %>
 		    			</figure>
 		    			<figure class="image is-hidden-desktop" id="float">
 		    				<%= link_to  admin_commodity_path(product) do%>
-		    				 <%= image_tag product.pictures_url(:thumb) %>
+		    				 <%= image_tag product.pictures %>
 		    				<% end %>
 		    			</figure>
 		    		</div>
