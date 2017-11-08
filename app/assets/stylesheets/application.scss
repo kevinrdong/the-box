@@ -34,7 +34,13 @@ figure{
 overflow:hidden;
 }
 
-&.is-3by2{
+.image{ 
+  display: block;
+  position: relative;
+  overflow: hidden;}
+
+
+.is-3by2{
 height: 100%;}
 
   
