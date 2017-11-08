@@ -1,6 +1,10 @@
 class Product < ApplicationRecord
 
 	mount_uploader :pictures, PictureUploader
+	mount_uploader :image1,Image1Uploader
+	mount_uploader :image2,Image2Uploader
+	mount_uploader :image3,Image3Uploader
+	mount_uploader :image4,Image4Uploader
 	
 	belongs_to :type 
 	has_many :ordered_items,dependent: :destroy

@@ -36,20 +36,71 @@
                     <%=simple_format  @product.description %> 
                 </div>   
                 </div> 
-                <div class="column">
-                    設計師:
-                    <div class="title is-size-4">
-                        <%= @product.designer.name %>
-                    </div>
-                    <figure class="image is-128x128 ">
-                        <%= image_tag @product.designer.image %>
-                    </figure>                    
-                </div>                                  
-                <div class="column has-text-right">
-                 <%= link_to '上一頁',:back,class:'button is-info  '%>               
-                </div>                    
+
+                                               
         </div>    
         </div>
+
+         <hr>
+        <div class="column">
+        <div class="title">
+            商品照片:
+        </div>
+            <% unless @product.image1.blank? %>
+             <div class="column has-text-centered">
+                <figure class="image is-3by2 is-hidden-mobile " >
+                    <%= image_tag @product.image1 %>
+                </figure> 
+                <figure class="image is-256x256 is-hidden-desktop">
+                    <%= image_tag @product.image1 %>
+                </figure> 
+            </div>               
+            <% end %>
+            <% unless @product.image2.blank?%>
+            <div class="column has-text-centered">
+                <figure class="image is-3by2 is-hidden-mobile" >
+                    <%= image_tag @product.image2 %>
+                </figure> 
+                <figure class="image is-256x256 is-hidden-desktop">
+                    <%= image_tag @product.image2%>
+                </figure>
+            </div>                
+            <% end %>
+            <% unless @product.image3.blank? %>
+            <div class="column has-text-centered">
+                <figure class="image is-3by2 is-hidden-mobile">
+                    <%= image_tag @product.image3 %>
+                </figure> 
+                <figure class="image is-256x256 is-hidden-desktop">
+                    <%= image_tag @product.image3 %>
+                </figure>  
+            </div>                
+            <% end %>
+            <% unless @product.image4.blank?  %>
+            <div class="column has-text-centered">
+                <figure class="image is-3by2 is-hidden-mobile">
+                    <%= image_tag @product.image4 %>
+                </figure> 
+                <figure class="image is-256x256 is-hidden-desktop">
+                    <%= image_tag @product.image4 %>
+                </figure> 
+            </div>                
+            <% end %>
+
+        <hr>
+            <div class="column">
+                設計師:
+                <div class="title is-size-4">
+                    <%= @product.designer.name %>
+                </div>
+                <figure class="image is-128x128 ">
+                    <%= image_tag @product.designer.image %>
+                </figure>                    
+            </div>                                 
+        </div>
+        <div class="column has-text-right">
+         <%= link_to '上一頁',:back,class:'button is-info  '%>               
+        </div>                
 
 	</div>
 </section>

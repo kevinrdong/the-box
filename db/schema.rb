@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106021522) do
+ActiveRecord::Schema.define(version: 20171108033049) do
 
   create_table "designers", force: :cascade do |t|
     t.string "image"
@@ -51,6 +51,10 @@ ActiveRecord::Schema.define(version: 20171106021522) do
     t.integer "type_id"
     t.boolean "shelve", default: true
     t.integer "designer_id"
+    t.string "image1"
+    t.string "image2"
+    t.string "image3"
+    t.string "image4"
     t.index [nil], name: "index_products_on_designer"
     t.index [nil], name: "index_products_on_designers"
   end

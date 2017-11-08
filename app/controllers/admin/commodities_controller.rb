@@ -101,7 +101,7 @@ private
 	end
 
 	def product_params
-		params.require(:product).permit(:name,:price,:description,:pictures,:type_id,:designer_id)		
+		params.require(:product).permit(:name,:price,:description,:pictures,:image1,:image2,:image3,:image4,:type_id,:designer_id)		
 	end
 
 	def type_params

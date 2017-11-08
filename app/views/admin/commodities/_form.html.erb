@@ -35,6 +35,7 @@
       <% end %>
     <%=f.text_area :description,class: 'textarea'%>
   </div>
+
   <div class="field">
   <%= f.label :pictures,'圖片' ,class:'label'%>
       <% @product.errors.full_messages_for(:pictures).each do |msg| %>
@@ -48,6 +49,40 @@
   <%= f.hidden_field :pictures_cache %>   
   </div>
 </div>
+
+  <div class="field">
+  <%= f.label :image1,'商品圖片' ,class:'label'%>
+      <% @product.errors.full_messages_for(:image1).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+   <% end %>
+   <span class="btn btn-default btn-file">
+  <%= f.file_field :image1%>
+  </span>  
+  </div>
+    <div class="field">
+      <% @product.errors.full_messages_for(:image2).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+   <% end %>
+    <span class="btn btn-default btn-file">
+  <%= f.file_field :image2%>
+  </span>   
+  </div>
+    <div class="field">
+      <% @product.errors.full_messages_for(:image3).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+   <% end %>
+  <span class="btn btn-default btn-file">
+  <%= f.file_field :image3%>
+  </span> 
+  </div>
+    <div class="field">
+      <% @product.errors.full_messages_for(:image4).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+   <% end %>
+   <span class="btn btn-default btn-file">
+  <%= f.file_field :image4%>
+  </span> 
+  </div>
 <div class="columns">
   <div class="column">
       <%= f.submit "確認" ,class:"button is-light"%>
