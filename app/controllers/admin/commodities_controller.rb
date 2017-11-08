@@ -19,13 +19,14 @@ class Admin::CommoditiesController < ApplicationController
 	end
 
 	def newtype
-
+		@types = Type.all
 		@type = Type.create type_params
 
 		if @type.save
 		  redirect_to new_admin_commodity_path
 		else
-		  render :newtype
+
+		  render :makenewtype
 		end	
 
 	end

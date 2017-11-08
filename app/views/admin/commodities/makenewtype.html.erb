@@ -11,6 +11,9 @@
     <%= form_for @type,url: admin_newtype_path do |f| %>
       <div class="field">
         <%= f.label :name,'商品類別', class: 'label' %>
+       <% @type.errors.full_messages_for(:name).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+       <% end %>       
         <%= f.text_field :name, class: 'input' %>
       </div>  
         <%= f.submit "確認",class:"button is-light" %>
