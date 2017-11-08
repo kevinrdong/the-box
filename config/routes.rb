@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 		 post   '/commodities/:id'  =>    'commodities#undershelve'
 		 get '/newtype'        => 'commodities#makenewtype'
 		 post '/newtype'       => 'commodities#newtype'
-		 delete '/newtype/:id' => 'commodities#destroy_type'
+		 delete '/newtype/:id' => 'commodities#destroy_type', as:'destroy_type'
 
 
 	end

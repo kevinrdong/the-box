@@ -14,7 +14,8 @@ class Admin::CommoditiesController < ApplicationController
 	end
 
 	def makenewtype
-		@type = Type.new		
+		@type  = Type.new		
+		@types = Type.all
 	end
 
 	def newtype
@@ -50,6 +51,7 @@ class Admin::CommoditiesController < ApplicationController
 	end
 
 	def edit	
+		@designers = Designer.all		
 	end
 
 	def update

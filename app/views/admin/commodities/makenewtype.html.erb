@@ -13,10 +13,25 @@
         <%= f.label :name,'商品類別', class: 'label' %>
         <%= f.text_field :name, class: 'input' %>
       </div>  
-        <%= f.submit "確認",class:"button is-primary" %>
+        <%= f.submit "確認",class:"button is-light" %>
         <%= link_to '跳過' ,new_admin_commodity_path ,class:'button is-info'%>
       <% end %>
     </div>
+   <div class="box">   
+            <p class="label">已有類別</p>
+ <% @types.each do |type| %>  
+   <div class="box">  
+      <div class="columns">
+        <div class="column">
+       <%= type.name %>           
+        </div>
+      <div class="column has-text-right">
+        <%= link_to '刪除',admin_destroy_type_path(type),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger '%>
+      </div>   
+       </div>             
+      </div> 
+    <% end %>  
+      </div>      
   </div>
 </div>
 
