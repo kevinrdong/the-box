@@ -8,6 +8,9 @@
 
   <div class="field">
     <%= f.label :designer_id,'設計師', class: 'label' %>
+      <% @product.errors.full_messages_for(:price).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+      <% end %> 
     <span class="select">
     <%= f.collection_select :designer_id,@designers,:id,:name %>
     </span>  
