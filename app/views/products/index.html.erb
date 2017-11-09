@@ -19,12 +19,12 @@
 				    <div class="column is-3" id="floatobject">
 				    	<div class="card" id="floatobject2">
 				    		<div class="card-image">
-				    			<figure class="image is-318x318 is-hidden-mobile" id="float">
+				    			<figure class="image is-318x318 is-hidden-mobile" id="float" style="width:100%">
 				    				<%= link_to  product_path(product) do%>
 				    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
 				    				<% end %>
 				    			</figure>
-				    			<figure class="image is-hidden-desktop" id="float">
+				    			<figure class="image is-318x318 is-hidden-desktop" id="float" style="width:100%">
 				    				<%= link_to  product_path(product) do%>
 				    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
 				    				<% end %>
