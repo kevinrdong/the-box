@@ -33,7 +33,7 @@ class Image2Uploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files
-     process resize_to_fit: [800, 600]
+     process resize_to_fit: [800, 800]
 
   
   # Add a white list of extensions which are allowed to be uploaded.
