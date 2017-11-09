@@ -13,12 +13,12 @@
         </div>
 
         <div class="column ">
-              <div class="title is-2"> <%= @product.name %> </div>  
+              <div class="title is-2"> <%= @product.name %> </div> 
+                <% if !@product.shelve %>               
                 <div class="column ">
-                <% if !@product.shelve %>
-                        <p class="button is-danger ">已下架</p>
-                <% end %>
-                </div>                                        
+                        <p class="button is-danger ">缺貨中</p>
+                </div>  
+                <% end %>                                                      
                 <div class="column is-size-4 has-text-weight-semibold">
                     價格:
                 <div class=" is-size-3 has-text-weight-bold">

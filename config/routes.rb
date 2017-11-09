@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 		 	resources :order,only:[:destroy]
 		 end
 		 post   '/commodities/:id'  =>    'commodities#undershelve'
+		 patch  '/commodities/:id'  =>    'commodities#notavailable', as:'not_available'
 		 get '/newtype'        => 'commodities#makenewtype'
 		 post '/newtype'       => 'commodities#newtype'
 		 delete '/newtype/:id' => 'commodities#destroy_type', as:'destroy_type'

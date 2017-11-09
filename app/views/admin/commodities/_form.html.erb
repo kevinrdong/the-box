@@ -87,12 +87,16 @@
   </span> 
   </div>
 <div class="columns">
-  <div class="column">
+  <div class="column ">
       <%= f.submit "確認" ,class:"button is-light"%>
+  </div>   
   <% if params[:action] == 'edit' %>
-  <%= link_to '下架',admin_path(@product),method: :post,data: {confirm:'要下架嘛？'},class:'button is-warning'%>
-  </div>
-   <div class="column has-text-right">
+  <div class="column has-text-right">
+  <% if @product.available%2 == 1 %>
+     <%= link_to '缺貨中',admin_path(@product),method: :post,data: {confirm:'缺貨嘛？'},class:'button is-warning'%>
+  <% else %>
+     <%= link_to '已補貨',admin_path(@product),method: :post,data: {confirm:'補貨了嘛？'},class:'button is-success'%>   
+  <% end %>
   <%= link_to '刪除',admin_commodity_path(@product),method: :delete,data: {confirm:'要刪除嘛？'},class:'button is-danger'%>    
   </div>
   <% end %>  

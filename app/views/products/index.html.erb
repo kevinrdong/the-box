@@ -15,7 +15,6 @@
 
 		  <div class="columns is-multiline">
 		  	<% type.products.each do |product| %>
-			  	<% if product.shelve %>
 				    <div class="column is-3" id="floatobject">
 				    	<div class="card" id="floatobject2">
 				    		<div class="card-image">
@@ -36,23 +35,23 @@
 		    			          <%= product.name %>
 		    			        </div>
 		    				</div>
-						  <div class="column">					  	
-							<div class="columns">
 								<div class="column">
 									售價 : 
 									<div class="title is-size-4">
 									 NT$<%= product.price %>										
 									</div>
 								</div>
-
-							</div>						  	
-						  </div>
+								<hr>
+								<% if !product.shelve %>						
+								<div class="column has-text-right">
+										<p class="button is-danger ">缺貨中</p>
+								</div>	
+								<% end %>
 		
 		    		</div>
 
 				    </div>
 				    </div>			  		
-			  	<% end %>
 		    <% end %>
 		  </div>
 		  

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108033049) do
+ActiveRecord::Schema.define(version: 20171109060457) do
 
   create_table "designers", force: :cascade do |t|
     t.string "image"
@@ -55,8 +55,7 @@ ActiveRecord::Schema.define(version: 20171108033049) do
     t.string "image2"
     t.string "image3"
     t.string "image4"
-    t.index [nil], name: "index_products_on_designer"
-    t.index [nil], name: "index_products_on_designers"
+    t.integer "available", default: 1
   end
 
   create_table "types", force: :cascade do |t|
