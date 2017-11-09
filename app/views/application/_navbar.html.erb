@@ -59,7 +59,8 @@
         <li class="<%= 'is-active'if current_page?brand_path %>">
           <%= link_to '品牌',brand_path %>
         </li>
-        <li class="<%= 'is-active'if current_page?products_path %>">
+        <li class="<%= 'is-active'if params[:action] == 'show'||params[:action] == 'index' %>">
+
           <%= link_to '商品',products_path %>
         </li>
         <li class="<%= 'is-active'if current_page?designers_path %>">
