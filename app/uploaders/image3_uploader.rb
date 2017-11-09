@@ -34,7 +34,7 @@ class Image3Uploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
-      process resize_to_fit: [1000, 1000]
+      process resize_to_fit: [1200, 1200]
 
 
 
