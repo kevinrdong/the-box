@@ -4,10 +4,10 @@
         <div class="column is-5 has-text-centered" >                 
           <div class="card-image">
             <figure class="image is-512x512 is-hidden-mobile">
-                <%= image_tag @product.pictures %>
+                <%= image_tag @product.pictures,style:'height:100%;max-width:none;width:auto' %>
             </figure> 
             <figure class="image is-256x256 is-hidden-desktop">
-                <%= image_tag @product.pictures %>
+                <%= image_tag @product.pictures,style:'height:100%;max-width:none;width:auto' %>
             </figure>  
           </div>         
         </div>
