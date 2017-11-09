@@ -14,4 +14,6 @@
 //= require rails-ujs
 //= require jquery
 //= require commodities
+//= require brand
 //= require_tree .
+
