@@ -48,40 +48,40 @@
             <% unless @product.image1.blank? %>
              <div class="column has-text-centered">
                 <figure class="image is-3by2 is-hidden-mobile " >
-                    <%= image_tag @product.image1 %>
+                    <%= image_tag @product.image1_url(:show) %>
                 </figure> 
                 <figure class="image is-3by2 is-hidden-desktop">
-                    <%= image_tag @product.image1 %>
+                    <%= image_tag @product.image1_url(:show) %>
                 </figure> 
             </div>               
             <% end %>
             <% unless @product.image2.blank?%>
             <div class="column has-text-centered">
                 <figure class="image is-3by2 is-hidden-mobile" >
-                    <%= image_tag @product.image2 %>
+                    <%= image_tag @product.image2_url(:show) %>
                 </figure> 
                 <figure class="image is-3by2 is-hidden-desktop">
-                    <%= image_tag @product.image2%>
+                    <%= image_tag @product.image2_url(:show)%>
                 </figure>
             </div>                
             <% end %>
             <% unless @product.image3.blank? %>
             <div class="column has-text-centered">
                 <figure class="image is-3by2 is-hidden-mobile">
-                    <%= image_tag @product.image3 %>
+                    <%= image_tag @product.image3_url(:show) %>
                 </figure> 
                 <figure class="image is-3by2 is-hidden-desktop">
-                    <%= image_tag @product.image3 %>
+                    <%= image_tag @product.image3_url(:show) %>
                 </figure>  
             </div>                
             <% end %>
             <% unless @product.image4.blank?  %>
             <div class="column has-text-centered">
                 <figure class="image is-3by2 is-hidden-mobile">
-                    <%= image_tag @product.image4 %>
+                    <%= image_tag @product.image4_url(:show) %>
                 </figure> 
                 <figure class="image is-3by2 is-hidden-desktop">
-                    <%= image_tag @product.image4 %>
+                    <%= image_tag @product.image4_url(:show) %>
                 </figure> 
             </div>                
             <% end %>
