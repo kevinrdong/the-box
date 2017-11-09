@@ -45,42 +45,42 @@
             商品照片:
         </div>
             <% unless @product.image1.blank? %>
-             <div class="column has-text-centered">
-                <figure class="image  is-hidden-mobile " >
-                    <%= image_tag @product.image1,style:"height:auto;width:100%" %>
+             <div class="column ">
+                <figure class="image is-hidden-mobile " style="height:800px" >
+                    <%= image_tag @product.image1,style:"height:100%;width:auto" %>
                 </figure> 
-                <figure class="image  is-hidden-desktop">
-                    <%= image_tag @product.image1,style:"height:auto;width:100%" %>
+                <figure class="image is-hidden-desktop" style="height:800px">
+                    <%= image_tag @product.image1,style:"height:100%;width:auto" %>
                 </figure> 
             </div>               
             <% end %>
             <% unless @product.image2.blank?%>
-            <div class="column has-text-centered">
-                <figure class="image  is-hidden-mobile" >
-                    <%= image_tag @product.image2,style:"height:auto;width:100%" %>
+            <div class="column ">
+                <figure class="image is-hidden-mobile" style="height:800px" >
+                    <%= image_tag @product.image2,style:"height:100%;width:auto" %>
                 </figure> 
-                <figure class="image  is-hidden-desktop">
-                    <%= image_tag @product.image2,style:"height:auto;width:100%"%>
+                <figure class="image is-hidden-desktop" style="height:800px">
+                    <%= image_tag @product.image2,style:"height:100%;width:auto"%>
                 </figure>
             </div>                
             <% end %>
             <% unless @product.image3.blank? %>
-            <div class="column has-text-centered">
-                <figure class="image  is-hidden-mobile">
-                    <%= image_tag @product.image3,style:"height:auto;width:100%" %>
+            <div class="column ">
+                <figure class="image is-hidden-mobile" style="height:800px">
+                    <%= image_tag @product.image3,style:"height:100%;width:auto" %>
                 </figure> 
-                <figure class="image  is-hidden-desktop">
-                    <%= image_tag @product.image3,style:"height:auto;width:100%" %>
+                <figure class="image is-hidden-desktop" style="height:800px">
+                    <%= image_tag @product.image3,style:"height:100%;width:auto" %>
                 </figure>  
             </div>                
             <% end %>
             <% unless @product.image4.blank?  %>
-            <div class="column has-text-centered">
-                <figure class="image  is-hidden-mobile">
-                    <%= image_tag @product.image4,style:"height:auto;width:100%" %>
+            <div class="column ">
+                <figure class="image is-hidden-mobile" style="height:800px">
+                    <%= image_tag @product.image4,style:"height:100%;width:auto" %>
                 </figure> 
-                <figure class="image  is-hidden-desktop">
-                    <%= image_tag @product.image4,style:"height:auto;width:100%" %>
+                <figure class="image is-hidden-desktop" style="height:800px">
+                    <%= image_tag @product.image4,style:"height:100%;width:auto" %>
                 </figure> 
             </div>                
             <% end %>
