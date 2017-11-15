@@ -1,5 +1,5 @@
 <div class="field">
-  <%= f.label :banner1,'商品圖片' ,class:'label'%>
+  <%= f.label :banner1,'首頁圖1' ,class:'label'%>
       <% @banner.errors.full_messages_for(:banner1).each do |msg| %>
         <p class="help is-danger"><%= msg %></p>
    <% end %>
@@ -9,6 +9,7 @@
 </div>
 
 <div class="field">
+  <%= f.label :banner2,'首頁圖2' ,class:'label'%>
       <% @banner.errors.full_messages_for(:banner2).each do |msg| %>
         <p class="help is-danger"><%= msg %></p>
    <% end %>
@@ -18,6 +19,7 @@
 </div>
 
 <div class="field">
+  <%= f.label :banner3,'首頁圖3' ,class:'label'%>  
       <% @banner.errors.full_messages_for(:banner3).each do |msg| %>
         <p class="help is-danger"><%= msg %></p>
    <% end %>
