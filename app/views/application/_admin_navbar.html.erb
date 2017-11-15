@@ -54,10 +54,13 @@
   <nav class="tabs is-boxed is-fullwidth">
     <div class="container">
       <ul>
+        <li class="<%= 'is-active'if current_page?admin_banners_path %>">
+          <%= link_to '關於一盒', admin_banners_path %>
+        </li>        
         <li class="<%= 'is-active'if current_page?products_path %>">
           <%= link_to '新增商品', admin_newtype_path %>
         </li>
-          <li class="<%= 'is-active'if params[:action] == 'show'||params[:action] == 'index' %>">
+          <li class="<%= 'is-active'if params[:controller] == 'admin/commodities' && params[:action] == 'index' %>">
           <%= link_to '商品列表',admin_commodities_path %>
         </li>
         <li class="<%= 'is-active'if current_page?designers_path %>">

@@ -1,0 +1,33 @@
+<div class="field">
+  <%= f.label :banner1,'商品圖片' ,class:'label'%>
+      <% @banner.errors.full_messages_for(:banner1).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+   <% end %>
+   <span class="btn btn-default btn-file">
+  <%= f.file_field :banner1%>
+  </span>  
+</div>
+
+<div class="field">
+      <% @banner.errors.full_messages_for(:banner2).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+   <% end %>
+    <span class="btn btn-default btn-file">
+  <%= f.file_field :banner2%>
+  </span>   
+</div>
+
+<div class="field">
+      <% @banner.errors.full_messages_for(:banner3).each do |msg| %>
+        <p class="help is-danger"><%= msg %></p>
+   <% end %>
+  <span class="btn btn-default btn-file">
+  <%= f.file_field :banner3%>
+  </span> 
+</div>
+
+  <div class="column ">
+      <%= f.submit "確認" ,class:"button is-light"%>
+
+  </div> 
+ 

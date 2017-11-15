@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 		 resources :details,only:[:index,:show,:destroy] do
 		 	resources :order,only:[:destroy]
 		 end
+		 resources :banners,only:[:index,:new,:create,:edit,:update,:destroy]
 		 post   '/commodities/:id'  =>    'commodities#undershelve'
 		 patch  '/commodities/:id'  =>    'commodities#notavailable', as:'not_available'
 		 get '/newtype'        => 'commodities#makenewtype'

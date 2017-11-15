@@ -27,7 +27,7 @@ class Admin::DesignersController < ApplicationController
 
 	def update
 		 
-		if @designer.update desginer_params
+		if @designer.update designer_params
 			redirect_to admin_designers_path
 		else
 			render :edit			

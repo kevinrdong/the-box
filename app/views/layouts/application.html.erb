@@ -11,7 +11,7 @@
 
   <body>
 
-    <% if params[:controller] == 'admin/commodities' || params[:controller] == 'admin/designers'|| params[:controller] == 'admin/details'%>
+    <% if params[:controller] == 'admin/commodities' || params[:controller] == 'admin/designers'|| params[:controller] == 'admin/details'||params[:controller] == 'admin/banners'%>
   	<%= render "admin_navbar" %>
     <% else %>
     <%= render "navbar"%>

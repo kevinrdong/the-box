@@ -1,0 +1,23 @@
+<section class="section">
+	<div class="container">
+<div class="columns">
+  <div class="column  is-4 is-offset-4"> 
+    <br>
+    <h1 class="title has-text-centered has-text-success" >更改首頁圖</h1>
+    <br>
+    <br>
+    <br>
+    <div class="box">
+<%= form_for @banner ,url:admin_banner_path do |f| %>
+  <%= render 'form',f:f %>
+<% end %>
+    </div>
+
+  </div>
+</div>		
+	</div>
+</section>
+
+
+
+

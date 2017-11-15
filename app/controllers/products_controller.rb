@@ -12,7 +12,8 @@ class ProductsController < ApplicationController
 		session['product_id']=params[:id]
 	end
 
-	def brand	
+	def brand
+		@banner = Banner.first	
 	end
 
 	def designers	
