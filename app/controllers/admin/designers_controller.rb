@@ -53,7 +53,7 @@ private
 		@designer = Designer.find params[:id]
 	end
 
-	def desginer_params
+	def designer_params
 		params.require(:designer).permit(:image,:name,:description)
 	end
 end
