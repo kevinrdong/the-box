@@ -57,16 +57,16 @@
         <li class="<%= 'is-active'if current_page?admin_banners_path %>">
           <%= link_to '關於一盒', admin_banners_path %>
         </li>        
-        <li class="<%= 'is-active'if current_page?products_path %>">
+        <li class="<%= 'is-active'if current_page?new_admin_commodity_path %>">
           <%= link_to '新增商品', admin_newtype_path %>
         </li>
           <li class="<%= 'is-active'if params[:controller] == 'admin/commodities' && params[:action] == 'index' %>">
           <%= link_to '商品列表',admin_commodities_path %>
         </li>
-        <li class="<%= 'is-active'if current_page?designers_path %>">
+        <li class="<%= 'is-active'if current_page?new_admin_designer_path %>">
           <%= link_to '新增設計師',new_admin_designer_path %>
         </li>
-        <li class="<%= 'is-active'if current_page?designers_path %>">
+        <li class="<%= 'is-active'if current_page?admin_designers_path %>">
           <%= link_to '設計師列表',admin_designers_path %>
         </li>               
       </ul>
