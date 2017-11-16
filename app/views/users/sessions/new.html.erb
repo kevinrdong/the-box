@@ -29,7 +29,6 @@
     <%= f.submit "登入" ,class:'button is-success is-outlined'%>
     <%= link_to '註冊',new_user_registration_path ,class:'button is-info is-outlined'%>
     <br>
-    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
     <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path,class:'button is-light is-outlined'%>    
 <% end %>
 
