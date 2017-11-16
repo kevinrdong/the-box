@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+         :omniauthable, :omniauth_providers => [:google_oauth2]
 
 	  def self.from_omniauth(auth)
 	  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -18,10 +18,6 @@ class User < ApplicationRecord
 	    # user.skip_confirmation!
 	  	end
 	   end    
-
-	   def delete_access_token(auth)
-		  @graph ||= Koala::Facebook::API.new(auth.credentials.token)
-		  @graph.delete_connections(auth.uid, "permissions")
-		end  	
+ 	
 
 end
