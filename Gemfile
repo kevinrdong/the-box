@@ -33,7 +33,7 @@ gem 'font-awesome-sass'
 # devise
 gem 'devise'
 gem 'omniauth','1.6.0'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 #awesomeprint
