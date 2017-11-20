@@ -2,7 +2,7 @@
 	<div class="container">
 		<p class="title has-text-danger "><%= flash[:note] %></p>
 		<div class="title has-text-centered has-text-success" >購買清單</div>
-				  <br>
+		  <br>
 		  <br>
 		  <br>
 	  <% @ordered_items.each do |item| %>
@@ -58,7 +58,7 @@
 
 	 <% end %>	
 	 <hr>
-	 <p class="help is-danger">本賣場運送方式採取7-11的交貨便/全家FamiPort，酌收運費$60元</p>
+	 <p class="help is-dark is-size-6">*本賣場運送方式採取7-11的交貨便/全家FamiPort，酌收運費$60元</p>
 	 <div class="column title has-text-right has-text-danger">
 	 	運費：60 元<br>
 	 	總金額：<%= @order.total %> 元
@@ -67,8 +67,12 @@
 	 <div class="column has-text-right">
 	 	<%= form_for @order,url:option_path do |order| %>
 	 	<div class="column has-text-left">
+	 		<%= link_to '7-11店家查詢',"https://emap.pcsc.com.tw" ,target:'_blank',class:"has-text-info"%> /
+	 		<%= link_to '全家店家查詢',"http://www.family.com.tw/marketing/inquiry.aspx",target:'_blank',class:"has-text-primary" %>
 	 	  <div class="title">
-	 	   寄件地址：	             <p class="help is-danger">(*必填)</p> 	  	
+	 	  <span class="help is-danger">(*必填)</span>	
+	 	   寄件地址：
+	 	   <p class="help is-danger is-size-6">請在地址後方括弧鄰近便利超商為7-11/全家</p> 	  	
 	 	  </div>
 
 	 	  <%= order.text_field :address ,class: 'input',placeholder:'請輸入寄件地址於此...'%>	 		
