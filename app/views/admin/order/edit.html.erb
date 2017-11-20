@@ -1,0 +1,20 @@
+
+<div class="column  is-4 is-offset-4">
+  <br>
+  <h1 class="title has-text-centered has-text-success" >輸入交貨號碼</h1>
+  <br>
+  <br>
+  <br>
+	<div class="box">
+		<%= form_for @order, url:admin_detail_order_path(current_user,@order) do |order| %>
+			<div class="field">
+			    <%= order.label :deliver_number ,'商品名稱', class: 'label'%>
+			    <p class="help is-danger">（*必填）</p>			          
+			    <%= order.text_field :deliver_number, class: 'input' %>
+			 </div>	
+			 <div class="column has-text-right ">
+			        <%= order.submit '完成訂單！' ,class:'button is-success  is-outlined '%>	 
+			 </div>
+		<% end %>		
+	</div>
+</div>

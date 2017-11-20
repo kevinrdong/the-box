@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115081037) do
+ActiveRecord::Schema.define(version: 20171120170228) do
 
   create_table "banners", force: :cascade do |t|
     t.string "banner1"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20171115081037) do
     t.string "option"
     t.string "address"
     t.boolean "cancel", default: false
+    t.boolean "done", default: false
+    t.string "deliver_number"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

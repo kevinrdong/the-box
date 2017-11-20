@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions',:omniauth_callbacks => "users/omniauth_callbacks"  }
+  devise_for :users, controllers: { sessions: 'users/sessions',:omniauth_callbacks => "users/omniauth_callbacks",registrations: 'users/registrations'   }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	root 'products#brand'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 		 resources :commodities
 		 resources :designers
 		 resources :details,only:[:index,:show,:destroy] do
-		 	resources :order,only:[:destroy]
+		 	resources :order,only:[:destroy,:edit,:update]
 		 end
 		 resources :banners,only:[:index,:new,:create,:edit,:update,:destroy]
 		 post   '/commodities/:id'  =>    'commodities#undershelve'

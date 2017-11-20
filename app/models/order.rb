@@ -5,7 +5,7 @@ class Order < ApplicationRecord
 
 		validates_presence_of :address ,on: :update
 	def total
-		total = 0
+		total = 60
 
 		self.ordered_items.each do |ordered_item|
 

@@ -7,10 +7,19 @@
     <div class="box">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  
+   <%= render 'layouts/errors' %>
   <div class="field">
-    <%= f.label :email ,'信箱:', class: 'label'%><br />
+    <%= f.label :name ,'姓名:', class: 'label'%>
+    <%= f.text_field :name, class: 'input', autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number ,'電話:', class: 'label'%>
+    <%= f.text_field :number, class: 'input', autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email ,'信箱:', class: 'label'%>
     <%= f.email_field :email, class: 'input', autofocus: true %>
   </div>
 
@@ -23,7 +32,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation ,'密碼確認:', class: 'label'%><br />
+    <%= f.label :password_confirmation ,'密碼確認:', class: 'label'%>
     <%= f.password_field :password_confirmation, class: 'input', autocomplete: "off" %>
   </div>
 
