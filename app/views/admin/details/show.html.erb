@@ -66,7 +66,7 @@
 		<hr>
 		<div class="column">
 		<% if !order.done and !order.cancel %>
-		  <%= link_to '輸入交貨號碼',edit_admin_detail_order_path(current_user,order) ,class:'button is-success  is-outlined '%>
+		  <%= link_to '輸入取貨號碼',edit_admin_detail_order_path(current_user,order) ,class:'button is-success  is-outlined '%>
 		  <%= link_to '取消訂單',admin_detail_order_path(@user,order),method: :delete,data: {confirm:'要取消嘛？'},class:'button is-danger is-outlined' %>	
 		<% elsif order.done and !order.cancel  %>
 		  	<div class="button is-success">

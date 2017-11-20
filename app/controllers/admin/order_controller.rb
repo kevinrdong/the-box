@@ -19,9 +19,8 @@ class Admin::OrderController < ApplicationController
 
 	def update
 		user = User.find params[:detail_id]
-		if @order.update order_params
-			@order.done = true
-			@order.save
+		@order.done = true
+		if @order.save order_params
 			NewOrderMailer.order_done(user,@order).deliver
 			redirect_to admin_detail_path(params[:detail_id])
 		end
