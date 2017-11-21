@@ -1,74 +1,83 @@
 <section class="section">
 	<div class="container">	
 		<p class="title has-text-danger "><%= flash[:note] %></p>	
-					
-		<nav class="breadcrumb is-size-5 is-size-6-mobile has-text-weight-bold is-hidden-desktop" aria-label="breadcrumbs">	<ul>
-		  	商品類別: <span>  </span>
-		<% @types.each do |type| %>			  	
-		    <li><a href="#<%= type.id %>" ><%= type.name%></a></li>
-		<% end %>		    
-		  </ul>
-		</nav>
+		<div class="columns">
+			<div class="column is-2 ">
+				<aside class="menu is-hidden-mobile">
+				  <p class="menu-label is-size-5">
+				    商品類別:
+				  </p>
+				  <ul class="menu-list">
+					<% @types.each do |type| %>			  	
+					    <li><a href="#<%= type.id %>" ><%= type.name%></a></li>
+					<% end %>
+				  </ul>
+				  
+				</aside>				
+			</div>
+			<div class="column is-12">
+			<nav class="breadcrumb is-size-5 is-size-6-mobile has-text-weight-bold is-hidden-desktop" aria-label="breadcrumbs">	<ul>
+			  	商品類別: <span>  </span>
+			<% @types.each do |type| %>			  	
+			    <li><a href="#<%= type.id %>" ><%= type.name%></a></li>
+			<% end %>		    
+			  </ul>
+			</nav>			
+				<% @types.each do |type| %>
 
-<aside class="menu is-hidden-mobile">
-  <p class="menu-label is-size-5">
-    商品類別:
-  </p>
-  <ul class="menu-list">
-	<% @types.each do |type| %>			  	
-	    <li><a href="#<%= type.id %>" ><%= type.name%></a></li>
-	<% end %>
-  </ul>
-  
-</aside>		
+				  <div class="title" id="<%= type.id %>">
+				  	<% if type.products.find_by(shelve:true) %>
+						<%= type.name%>	  			  	
+				  </div>		  	
+				  <hr>
+				<% end %>		  
 
-		<% @types.each do |type| %>
+				  <div class="columns is-multiline">
+				  	<% type.products.each do |product| %>
+						    <div class="column is-2" id="floatobject">
+						    	<div class="card" id="floatobject2">
+						    		<div class="card-image">
+						    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
+						    				<%= link_to  product_path(product) do%>
+						    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
+						    				<% end %>
+						    			</figure>
+						    			<figure class="image is-square is-hidden-desktop" id="float" style="width:100%">
+						    				<%= link_to  product_path(product) do%>
+						    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
+						    				<% end %>
+						    			</figure>				    			
+						    		</div>				    		
+				    		<div class="card-content">
+				    					<div class="">
+				    					<%= link_to  product_path(product) do%>	
+				    			          <%= product.name %>
+				    			          <p>售價 : NT$<%= product.price %>	</p>
+				    			        <% end %>  									
+				    			        </div>
+										<% if !product.shelve %>
+										<hr>						
+										<div class="column has-text-right">
+												<p class="button is-danger ">缺貨中</p>
+										</div>	
+										<% end %>
+				
+				    		</div>
 
-		  <div class="title" id="<%= type.id %>">
-		  	<% if type.products.find_by(shelve:true) %>
-				<%= type.name%>	  			  	
-		  </div>		  	
-		  <hr>
-		<% end %>		  
+						    </div>
+						    </div>			  		
+				    <% end %>
+				  </div>
+				  
+				<% end %>
+			</div>			
+		</div>			
 
-		  <div class="columns is-multiline">
-		  	<% type.products.each do |product| %>
-				    <div class="column is-2" id="floatobject">
-				    	<div class="card" id="floatobject2">
-				    		<div class="card-image">
-				    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
-				    				<%= link_to  product_path(product) do%>
-				    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
-				    				<% end %>
-				    			</figure>
-				    			<figure class="image is-square is-hidden-desktop" id="float" style="width:100%">
-				    				<%= link_to  product_path(product) do%>
-				    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
-				    				<% end %>
-				    			</figure>				    			
-				    		</div>				    		
-		    		<div class="card-content">
-		    					<div class="">
-		    					<%= link_to  product_path(product) do%>	
-		    			          <%= product.name %>
-		    			          <p>售價 : NT$<%= product.price %>	</p>
-		    			        <% end %>  									
-		    			        </div>
-								<% if !product.shelve %>
-								<hr>						
-								<div class="column has-text-right">
-										<p class="button is-danger ">缺貨中</p>
-								</div>	
-								<% end %>
-		
-		    		</div>
 
-				    </div>
-				    </div>			  		
-		    <% end %>
-		  </div>
-		  
-		<% end %>
+
+
+
+
 
 	</div>
 </section>
