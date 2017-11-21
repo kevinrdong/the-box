@@ -1,8 +1,8 @@
 <section class="section">
-	<div class="container">	
+	<div class="container" style="left: -5%">	
 		<p class="title has-text-danger "><%= flash[:note] %></p>	
-		<div class="columns">
-			<div class="column is-2 ">
+		<div class="columns" >
+			<div class="column is-2 " >
 				<aside class="menu is-hidden-mobile">
 				  <p class="menu-label is-size-5">
 				    商品類別:
@@ -15,7 +15,7 @@
 				  
 				</aside>				
 			</div>
-			<div class="column is-12">
+			<div class="column is-11">
 			<nav class="breadcrumb is-size-5 is-size-6-mobile has-text-weight-bold is-hidden-desktop" aria-label="breadcrumbs">	<ul>
 			  	商品類別: <span>  </span>
 			<% @types.each do |type| %>			  	
@@ -50,14 +50,12 @@
 						    			</figure>				    			
 						    		</div>				    		
 				    		<div class="card-content">
-				    					<div class="">
-				    					<%= link_to  product_path(product) do%>	
-				    			          <%= product.name %>
-				    			          <p>售價 : NT$<%= product.price %>	</p>
-				    			        <% end %>  									
-				    			        </div>
-										
-				
+		    					<div class="">
+		    					<%= link_to  product_path(product) do%>	
+		    			          <%= product.name %>
+		    			          <p>售價 : NT$<%= product.price %>	</p>
+		    			        <% end %>  									
+		    			        </div>										
 				    		</div>
 
 						    </div>
