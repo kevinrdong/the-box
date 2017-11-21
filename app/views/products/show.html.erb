@@ -17,6 +17,8 @@
                 <div class="column has-text-right">
                 <% if !@product.shelve %>
                 <p class="button is-danger is-outlined">缺貨中</p>  
+                <% elsif !work.working %>
+                <p class="button is-danger is-outlined">暫時歇業</p>  
                 <% else %>
                  <%= link_to '我要購買',order_path,class:'button is-danger'%>  
                 <% end %> 
