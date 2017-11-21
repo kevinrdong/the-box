@@ -7,5 +7,9 @@ module ApplicationHelper
         when 'error' then "has-text-centered has-text-danger"
         when 'alert' then "has-text-centered has-text-danger"
     end
-end
+    end
+
+    def work
+    	work = Work.first
+    end
 end

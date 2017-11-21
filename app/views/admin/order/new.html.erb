@@ -1,0 +1,21 @@
+
+<div class="column  is-4 is-offset-4">
+  <br>
+  <% if @work.working %>
+   <h1 class="title has-text-centered has-text-danger" >暫時歇業</h1>
+  <% else %>
+   <h1 class="title has-text-centered has-text-success" >繼續營業</h1>	
+  <% end %>
+  <br>
+  <br>
+  <br>
+	<div class="box">
+	  <div class="column has-text-centered ">
+  		<% if @work.working %>
+		   <%= link_to '暫時歇業',admin_order_index_path,method: :post ,class:'button is-danger large is-outlined ',data:{confirm:"您確定要休息一下嘛？"}%>
+		<% else %>	 
+		   <%= link_to '繼續營業',admin_order_index_path ,method: :post,class:'button is-success large is-outlined ',data:{confirm:"一盒終於要繼續開工了嘛？"}%>
+		<% end %>   
+      </div>		
+	</div>
+</div>

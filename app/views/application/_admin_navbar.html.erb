@@ -26,6 +26,11 @@
              <% end %> 
              <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %>   
              <%= link_to '顧客訂單',admin_details_path,class:"navbar-item" %>   
+            <% if work.working %>
+              <%= link_to '暫時歇業',new_admin_order_path,class:"navbar-item" %>
+            <% else %>
+              <%= link_to '繼續營業',new_admin_order_path,class:"navbar-item" %>
+            <% end %>            
           <% else %>
             <%= link_to '登入',new_user_session_path ,class:"navbar-item" %>            
           <% end %>      

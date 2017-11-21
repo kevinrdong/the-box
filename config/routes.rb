@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	namespace :admin , path:"leanne" do
 		 resources :commodities
 		 resources :designers
+		 resources :order,only:[:new,:create]
 		 resources :details,only:[:index,:show,:destroy] do
 		 	resources :order,only:[:destroy,:edit,:update]
 		 end

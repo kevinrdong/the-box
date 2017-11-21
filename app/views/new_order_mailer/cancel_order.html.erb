@@ -5,6 +5,6 @@
 
 	<li><%= ordered_item.product.name %> <span><%= ordered_item.quantities %>個</span></li>
 <% end %>
-<p >本次消費總金額共 <%= @order.total %> 元</p>
+<p >本次消費總金額加上運費$60共 <%= @order.total %> 元</p>
 <p>計件地址： <%= @order.address %></p>
 <p>謝謝您的光臨，期待您下次再度光臨一盒</p>

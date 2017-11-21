@@ -26,11 +26,14 @@
              <% end %>
              <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %> 
              <%= link_to '訂單紀錄',detail_path,class:"navbar-item" %>
-
           <% else %>
-            <%= link_to '登入',new_user_session_path ,class:"navbar-item" %>            
-          <% end %>  
-            <%= link_to '下訂單',orders_path,class:"navbar-item"%>            
+            <%= link_to '登入',new_user_session_path ,class:"navbar-item" %>               
+          <% end %>
+            <% if work.working %>
+              <%= link_to '下訂單',orders_path,class:"navbar-item"%>  
+            <% else %>
+              <p class="navbar-item">暫時歇業</p>
+            <% end %> 
           </div>
         </div>
       </div>

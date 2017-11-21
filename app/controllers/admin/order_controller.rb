@@ -4,6 +4,22 @@ class Admin::OrderController < ApplicationController
 	before_action :find_order,only:[:edit,:update]
 	before_action :set_user,only:[:edit,:update]
 
+	def new
+		@work = Work.first
+	end
+
+	def create
+		work = Work.first
+		if work.working
+			work.working = false
+			work.save
+			redirect_to admin_commodities_path
+		else
+			work.working = true
+			work.save			
+			redirect_to admin_commodities_path
+		end
+	end
 
 	def destroy
 		order = Order.where('user_id=?',params[:detail_id]).find(params[:id])
