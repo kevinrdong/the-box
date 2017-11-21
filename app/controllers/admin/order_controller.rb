@@ -21,7 +21,7 @@ class Admin::OrderController < ApplicationController
 	def update
 		@order.done = true
 		if @order.save order_params
-			NewOrderMailer.order_done(user,@order).deliver
+			NewOrderMailer.order_done(@user,@order).deliver
 			redirect_to admin_detail_path(params[:detail_id])
 		end
 	end
