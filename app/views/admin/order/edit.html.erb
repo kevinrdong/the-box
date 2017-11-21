@@ -6,7 +6,7 @@
   <br>
   <br>
 	<div class="box">
-		<%= form_for @order, url:admin_detail_order_path(current_user,@order) do |order| %>
+		<%= form_for @order, url:admin_detail_order_path(@user,@order) do |order| %>
 			<div class="field">
 			    <%= order.label :deliver_number ,'取貨號碼', class: 'label'%>
 			    <p class="help is-danger">（*必填）</p>			          

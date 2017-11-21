@@ -2,6 +2,7 @@ class Admin::OrderController < ApplicationController
 	before_action :authenticate_user!
 	before_action :authenticate_admin
 	before_action :find_order,only:[:edit,:update]
+	before_action :set_user,only:[:edit,:update]
 
 
 	def destroy
@@ -18,7 +19,6 @@ class Admin::OrderController < ApplicationController
 	end
 
 	def update
-		user = User.find params[:detail_id]
 		@order.done = true
 		if @order.save order_params
 			NewOrderMailer.order_done(user,@order).deliver
@@ -37,6 +37,10 @@ private
 
 	def order_params
 		params.require(:order).permit(:deliver_number)
+	end
+
+	def set_user
+		@user = User.find params[:detail_id]
 	end
 
 	def find_order
