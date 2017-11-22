@@ -40,19 +40,29 @@
     </nav>
   </div>
 
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <p class="title is-2 has-text-left">
-        一盒
-      </p>
-      <p class="is-8 has-text-left is-hidden-desktop">
-        一個盒子，蘊含著我們對生活品質的想像，在手作的情感，與生活的溫度裡，裝載每份深刻。
-      </p> 
-      <br>
-      <p class="subtitle  is-6 has-text-left is-hidden-mobile">
-        一個盒子，蘊含著我們對生活品質的想像，在手作的情感，與生活的溫度裡，裝載每份深刻。
-      </p>
-     
+  <div class="hero-body" style="padding: 0px">
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+    <%= image_tag @banner.banner1 , style:"width:100%" %>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <%= image_tag @banner.banner2 , style:"width:100%" %>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <%= image_tag @banner.banner3, style:"width:100%" %>
+    </div>
+    <div style="text-align:center">
+  <span class="dot w3-border"></span> 
+  <span class="dot w3-border"></span> 
+  <span class="dot w3-border"></span> 
+</div>
+
     </div>
   </div>
   <div class="hero-foot">
@@ -77,3 +87,25 @@
   </nav>
   </div>
 </section>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+</script>
