@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 	end
 
 	def brand
-		@banner = Banner.first	
+
 	end
 
 	def designers	

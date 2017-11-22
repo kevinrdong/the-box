@@ -12,4 +12,8 @@ module ApplicationHelper
     def work
     	work = Work.first
     end
+
+    def brand
+		@banner = Banner.first	
+	end
 end
