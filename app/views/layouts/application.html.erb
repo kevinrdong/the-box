@@ -11,19 +11,20 @@
 
   <body>
 
-    <% if params[:controller].split("/").first == 'admin'%>
-  	<%= render "admin_navbar" %>
-    <% else %>
-    <%= render "navbar"%>
-    <% end %>
-
     <div class="cssload-thecube">
     <div class="cssload-cube cssload-c1"></div>
     <div class="cssload-cube cssload-c2"></div>
     <div class="cssload-cube cssload-c4"></div>
     <div class="cssload-cube cssload-c3"></div>
     </div>
-    <div id="rails">
+   <div id="rails">
+    <% if params[:controller].split("/").first == 'admin'%>
+  	<%= render "admin_navbar" %>
+    <% else %>
+    <%= render "navbar"%>
+    <% end %>
+
+ 
           <%= yield %>  
     </div>
 
