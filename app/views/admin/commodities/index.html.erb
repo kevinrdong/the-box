@@ -38,12 +38,12 @@
 						    	<div class="card" id="floatobject2">
 						    		<div class="card-image">
 						    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
-						    				<%= link_to  product_path(product) do%>
+						    				<%= link_to  edit_admin_commodity_path(product) do%>
 						    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
 						    				<% end %>
 						    			</figure>
 						    			<figure class="image is-square is-hidden-desktop" id="float" style="width:100%">
-						    				<%= link_to  product_path(product) do%>
+						    				<%= link_to  edit_admin_commodity_path(product) do%>
 						    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
 						    				<% end %>
 						    			</figure>				    			
@@ -57,7 +57,7 @@
 						    			<% end %>	    				
 						    			</div>				    			
 				    					<div class="">
-				    					<%= link_to  product_path(product) do%>	
+				    					<%= link_to  edit_admin_commodity_path(product) do%>	
 				    			          <%= product.name %>
 				    			          <p>售價 : NT$<%= product.price %>	</p>
 				    			        <% end %>  									
