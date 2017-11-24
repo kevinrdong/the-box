@@ -3,10 +3,10 @@
         <div class="columns">
         <div class="column is-5 has-text-centered" >
           <div class="card-image">
-            <figure class="image is-square is-hidden-mobile" style="overflow: hidden">
+            <figure class="image is-350x350 is-hidden-mobile" style="overflow: hidden">
                 <%= image_tag @product.pictures,style:'height:100%;max-width:none;width:auto' %>
             </figure> 
-            <figure class="image is-square is-hidden-desktop" style="overflow: hidden">
+            <figure class="image is-200x200 is-hidden-desktop" style="margin-left: 15%;overflow: hidden">
                 <%= image_tag @product.pictures,style:'height:100%;max-width:none;width:auto' %>
             </figure>  
           </div>         
@@ -19,9 +19,9 @@
                         <p class="button is-danger ">缺貨中</p>
                 </div>  
                 <% end %>                                                      
-                <div class="column is-size-4 has-text-weight-semibold">
+                <div class="column is-size-5 has-text-weight-semibold">
                     價格:
-                <div class=" is-size-3 has-text-weight-bold">
+                <div class=" is-size-4 has-text-weight-bold">
                     NT$<%= @product.price %> 
                 </div>
                 </div>
@@ -32,9 +32,9 @@
                 </div>  
                 <% end %>            
                 </div>
-                <div class="column is-size-4 has-text-weight-semibold">
+                <div class="column is-size-5 has-text-weight-semibold">
                     敘述:
-                <div class=" is-size-5 has-text-weight-normal" >
+                <div class=" is-size-6 has-text-weight-normal" >
                     <%=simple_format  @product.description %> 
                 </div>                    
                 </div>             

@@ -1,15 +1,15 @@
 <section class="section">
-	<div class="container">	
+	<div class="container" id="left">	
 		<p class="title has-text-danger "><%= flash[:note] %></p>	
 		<div class="columns">
 			<div class="column is-2 ">
 				<aside class="menu is-hidden-mobile">
-				  <p class="menu-label is-size-5">
+				  <p class="menu-label is-size-4 has-text-weight-bold">
 				    商品類別:
 				  </p>
 				  <ul class="menu-list">
 					<% @types.each do |type| %>			  	
-					    <li><a href="#<%= type.id %>" ><%= type.name%></a></li>
+					    <li><a href="#<%= type.id %>" class="is-size-5"><%= type.name%></a></li>
 					<% end %>
 				  </ul>
 				  
