@@ -1,9 +1,9 @@
-<section class="section">
+<section class="section" id="bread2">
 	<div class="container" id="left">	
 		<p class="title has-text-danger "><%= flash[:note] %></p>	
 		<div class="columns">
 			<div class="column is-2 ">
-				<aside class="menu is-hidden-mobile">
+				<aside class="menu is-hidden-mobile"  id="bread">
 				  <p class="menu-label is-size-4 has-text-weight-bold">
 				    商品類別:
 				  </p>
@@ -16,7 +16,7 @@
 				</aside>				
 			</div>
 			<div class="column is-12">
-			<nav class="breadcrumb is-size-5 is-size-6-mobile has-text-weight-bold is-hidden-desktop" aria-label="breadcrumbs">	<ul>
+			<nav class="breadcrumb is-size-5 is-size-6-mobile has-text-weight-bold is-hidden-desktop" aria-label="breadcrumbs" >	<ul>
 			  	商品類別: <span>  </span>
 			<% @types.each do |type| %>			  	
 			    <li><a href="#<%= type.id %>" ><%= type.name%></a></li>
@@ -79,8 +79,10 @@
 				  </div>
 				  
 				<% end %>
-			</div>			
+			</div>	
+		<a href="#bread" id="up"><i class="fa fa-arrow-circle-up is-hidden-mobile" aria-hidden="true"></i></a>
+		<a href="#bread2" id="up"><i class="fa fa-arrow-circle-up is-hidden-desktop " aria-hidden="true"></i></a>					
 		</div>
-		<a href="#<%= @types.first.id %>" id="up"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>			
+
 	</div>
 </section>
