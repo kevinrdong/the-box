@@ -13,7 +13,7 @@
         </div>
 
         <div class="column"> 
-              <div class="title is-2"> <%= @product.name %> </div>                                      
+              <div class=" is-size-2 has-text-weight-bold is-size-4-mobile"> <%= @product.name %> </div>                                      
                 <div class="column has-text-right">
                 <% if !@product.shelve %>
                 <p class="button is-danger is-outlined">缺貨中</p>  
@@ -43,7 +43,7 @@
 
         <hr>
         <div class="column" style="margin-left: auto;margin-right: auto;">
-        <div class="title">
+        <div class=" is-size-2 has-text-weight-bold is-size-5-mobile">
             商品照片:
         </div>
             <% unless @product.image1.blank? %>

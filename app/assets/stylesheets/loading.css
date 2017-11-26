@@ -6,7 +6,7 @@ width: 150px;
 height: 150px;
 left: 45%;
 margin-top: 300px;
-position: absolute;
+position: fixed;
 transform: rotateZ(45deg);
 -o-transform: rotateZ(45deg);
 -ms-transform: rotateZ(45deg);
@@ -181,7 +181,7 @@ opacity: 0;
 
 @media screen and (max-width: 768px) {
 .cssload-thecube {
-left: 35%;
+left: 30%;
 margin-top: 150px;
 }
 
