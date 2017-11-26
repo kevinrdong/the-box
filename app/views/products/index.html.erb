@@ -23,7 +23,7 @@
 				</aside>
 
 			</div>
-			<div class="column is-12">
+			<div class="column is-12 ">
 			
 				<% @types.each do |type| %>
 
@@ -34,10 +34,10 @@
 				  <hr>
 				<% end %>		  
 
-				  <div class="columns is-multiline">
+				  <div class="columns is-multiline is-desktop is-mobile">
 				  	<% type.products.each do |product| %>
 				  		<% if product.shelve %>
-						    <div class="column is-2" id="floatobject">
+						    <div class="column is-2-desktop is-6-mobile " id="floatobject" style="padding: 3px">
 						    	<div class="card" id="floatobject2">
 						    		<div class="card-image">
 						    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
@@ -51,7 +51,7 @@
 						    				<% end %>
 						    			</figure>				    			
 						    		</div>				    		
-				    		<div class="card-content">
+				    		<div class="card-content is-size-7-mobile">
 		    					<div class="">
 		    					<%= link_to  product_path(product) do%>	
 		    			         <div class="has-text-weight-bold"><%= product.name %></div> 
