@@ -26,7 +26,7 @@
 			<div class="column is-12 ">
 			
 				<% @types.each do |type| %>
-
+	<br>
 				  <div class="title" id="<%= type.id %>">
 				  	<% if type.products.find_by(shelve:true) %>
 						<%= type.name%>	  			  	
