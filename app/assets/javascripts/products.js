@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+$(window).scroll(function(){
+ 
+  if ($(this).scrollTop()>783) {
+    $("aside").css({"position":"fixed","top":"0px"});
+  }
+
+  else
+    $("aside").css({"position":"static","top":"auto"})
+});
+
+
 
 });
+
 
