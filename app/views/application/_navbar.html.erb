@@ -22,6 +22,14 @@
               <i class="fa fa-instagram " aria-hidden="true" style="font-size:2em"></i>
               <% end %>                          
             </div>
+            <div class="navbar-item" style="padding-left: 0px;padding-right: 0px">/</div>
+            <div class="navbar-item " >
+            <a href="mailto:lebox1995@gmail.com">
+              <i class="fa fa-envelope-square" aria-hidden="true" style="font-size:2em"></i>
+            </a> 
+            
+            </div>
+
           <span class="navbar-burger burger" data-target="navbarMenuHeroB">
             <span></span>
             <span></span>
@@ -86,10 +94,7 @@
         </li>
         <li class="<%= 'is-active'if current_page?designers_path %>">
           <%= link_to '設計師',designers_path %>
-        </li>
-        <li class="<%= 'is-active'if current_page?contact_path %>">
-          <%= link_to '聯絡一盒',contact_path %>
-        </li>          
+        </li>         
       </ul>
     </div>
   </nav>
@@ -122,5 +127,19 @@
       }
       x[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " w3-white";
-    }
+    };
+
+     sqs_title = "聯絡一盒";
+    sqs_label_submit = "寄信";
+    sqs_label_name = "姓名";
+    sqs_label_email = "你的信箱";
+    sqs_label_message = "信件內容";
+    sqs_message = "我想告訴一盒...";
+    sqs_subject = "信件主旨";
+    sqs_name = "你的姓名";
+    sqs_email = "你的信箱";
+    sqs_label_subject = "信件主旨";
+</script>
+<script src="https://squaresend.com/squaresend.js">
+
 </script>
