@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-var x = $(".hero").height();
+
 $(window).scroll(function(){
  
- 
+ var x = $(".hero").height();
   if ($(this).scrollTop()> x ) {
     $("aside").css({"position":"fixed","top":"0px"});
   }
