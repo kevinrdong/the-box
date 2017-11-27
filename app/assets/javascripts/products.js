@@ -21,14 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+var x = $(".hero").height();
 $(window).scroll(function(){
  
-  if ($(this).scrollTop()>783) {
+ 
+  if ($(this).scrollTop()> x ) {
     $("aside").css({"position":"fixed","top":"0px"});
   }
 
-  else
+  if ($(this).scrollTop()< x){
     $("aside").css({"position":"static","top":"auto"})
+  }
 });
 
 
