@@ -3,7 +3,11 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-
+          <% if current_user %>
+          <div class="navbar-item has-text-weight-bold">
+            <p>Welcome 管理員:<%= current_user.name %></p>
+          </div>
+          <% end %>
           <span class="navbar-burger burger" data-target="navbarMenuHeroB">
             <span></span>
             <span></span>
@@ -11,11 +15,7 @@
           </span>
         </div>
         <div id="navbarMenuHeroB" class="navbar-menu">
-          <% if current_user %>
-          <div class="navbar-item">
-            <p>Welcome 管理員:<%= current_user.name %></p>
-          </div>
-          <% end %>
+
           <div class="navbar-end">
           <% if current_user %>
              <% if current_user.admin? %>
