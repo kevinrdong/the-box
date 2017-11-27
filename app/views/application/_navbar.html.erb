@@ -3,7 +3,25 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
+          <div class="navbar-item has-text-weight-bold">
+           <% if current_user %>
+            <p>Hi! <%= current_user.name %></p>
+            <div class="navbar-item" style="padding-left: 0px;padding-right: 0px">,</div>             
+          <% end %>             
+          </div>
 
+            <div class="navbar-item">
+              <%= link_to("https://www.facebook.com/aboxwj") do%> 
+              <i class="fa fa-facebook-square fa-6 " aria-hidden="true" style="font-size:2em"></i>
+             <% end %>                 
+            </div>
+            <div class="navbar-item" style="padding-left: 0px;padding-right: 0px">/</div>
+
+            <div class="navbar-item " >
+              <%= link_to("https://www.instagram.com/le_box_leather") do%> 
+              <i class="fa fa-instagram " aria-hidden="true" style="font-size:2em"></i>
+              <% end %>                          
+            </div>
           <span class="navbar-burger burger" data-target="navbarMenuHeroB">
             <span></span>
             <span></span>
@@ -11,12 +29,13 @@
           </span>
         </div>
         <div id="navbarMenuHeroB" class="navbar-menu">
-          <% if current_user %>
-          <div class="navbar-item">
-            <p>Welcome <%= current_user.name %></p>
+          <div class="navbar-start">
+
+          
           </div>
-          <% end %>
+
           <div class="navbar-end">
+          
           <% if current_user %>
              <% if current_user.admin? %>
              <div class="tag is-warning ">顧客視角</div>
@@ -25,6 +44,7 @@
              <%= link_to '登出',destroy_user_session_path, method: :delete ,class:"navbar-item" %> 
              <%= link_to '訂單紀錄',detail_path,class:"navbar-item" %>
           <% else %>
+          
             <%= link_to '登入',new_user_session_path ,class:"navbar-item" %>               
           <% end %>
             <% if work.working %>
@@ -32,6 +52,7 @@
             <% else %>
               <p class="navbar-item">暫時歇業</p>
             <% end %> 
+            
           </div>
         </div>
       </div>
@@ -67,7 +88,7 @@
           <%= link_to '設計師',designers_path %>
         </li>
         <li class="<%= 'is-active'if current_page?contact_path %>">
-          <%= link_to '聯絡方式',contact_path %>
+          <%= link_to '聯絡一盒',contact_path %>
         </li>          
       </ul>
     </div>

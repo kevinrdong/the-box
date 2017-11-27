@@ -1,5 +1,5 @@
 <div class="columns">
-  <div class="column  is-2 is-offset-5">
+  <div class="column  is-2 is-offset-5  is-10-mobile is-offset-1-mobile">
     <br>
     <br>
     <br>
@@ -10,12 +10,12 @@
    <%= render 'layouts/errors' %>
     <%= f.label :email ,'信箱:'%>    
     <br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true ,class:"input"%>
   </div>
 
   <div class="field">
     <%= f.label :password ,'密碼:'%><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off" ,class:"input"%>
   </div>
 
   <% if devise_mapping.rememberable? -%>
