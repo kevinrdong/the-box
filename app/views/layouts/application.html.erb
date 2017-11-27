@@ -4,7 +4,19 @@
     <title>Le Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-    <script src="https://squaresend.com/squaresend.js"></script>
+    <script src="https://squaresend.com/squaresend.js">
+    sqs_css="@media ( max-width:768px ) { .sqs-container{position:absolute;top:10%;width:95%;}";
+    sqs_title = "聯絡一盒";
+    sqs_label_submit = "寄信";
+    sqs_label_name = "姓名";
+    sqs_label_email = "你的信箱";
+    sqs_label_message = "信件內容";
+    sqs_placeholder_message = "我想告訴一盒...";
+    sqs_placeholder_subject = "信件主旨";
+    sqs_placeholder_name = "你的姓名";
+    sqs_placeholder_email = "你的信箱";
+    sqs_label_subject = "信件主旨";
+    </script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -31,3 +43,4 @@
 
   </body>
 </html>
+
