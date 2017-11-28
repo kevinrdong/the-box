@@ -7,6 +7,8 @@
 		  <br>
 		  <br>
 		<% @orders.order(id: :desc).each do |order| %>
+		
+		<div class="box">
 		<% if order.cancel %>
 			<div class="has-text-danger ">
 			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 取消
@@ -15,8 +17,7 @@
 		  	<div class=" has-text-success ">
 			此訂單已經在 <%= order.updated_at.strftime('%m/%d') %> 完成，取貨編號:<%= order.deliver_number %>
 		    </div>			
-		<% end %>		
-		<div class="box">
+		<% end %>			
 		<div class="columns">
 			<div class="column">
               訂單編號: 
