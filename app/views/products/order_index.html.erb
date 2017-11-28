@@ -69,13 +69,11 @@
 	 	<div class="column has-text-left">
 	 		<%= link_to '7-11店家查詢',"https://emap.pcsc.com.tw" ,target:'_blank',class:"has-text-info"%> /
 	 		<%= link_to '全家店家查詢',"http://www.family.com.tw/marketing/inquiry.aspx",target:'_blank',class:"has-text-primary" %>
-	 	  <div class="title">
-	 	  <span class="help is-danger">(*必填)</span>	
-	 	   寄件地址：
-	 	   <p class="help is-danger is-size-6">請在地址後方括弧鄰近便利超商為7-11/全家</p> 	  	
+	 	  <div class="title">	  	
+	 	   寄件地址：	<span class="help is-danger">(*必填)</span>  	
 	 	  </div>
 
-	 	  <%= order.text_field :address ,class: 'input',placeholder:'請輸入寄件地址於此...'%>	 		
+	 	  <%= order.text_field :address ,class: 'input',placeholder:'請輸入寄件的便利超商地址於此，在地址後方括弧便利超商為7-11/全家...'%>	 		
 	 	</div>
 		<div class="column has-text-left">
 	 	  <div class="title">

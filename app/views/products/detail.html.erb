@@ -8,13 +8,13 @@
 		  <br>
 		<% @orders.order(id: :desc).each do |order| %>
 		<% if order.cancel %>
-		<div class="button is-danger">
+			<div class="has-text-danger ">
 			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 取消
-		</div>
+		   </div>
 		<% elsif order.done %>	
-		  	<div class="button is-success">
-			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 完成
-		    </div>				
+		  	<div class=" has-text-success ">
+			此訂單已經在 <%= order.updated_at.strftime('%m/%d') %> 完成，取貨編號:<%= order.deliver_number %>
+		    </div>			
 		<% end %>		
 		<div class="box">
 		<div class="columns">

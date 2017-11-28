@@ -1,8 +1,9 @@
 <section class="section">
 	<div class="container">	
 		<br>
-		<h1 class="title is-size-6-mobile has-text-centered  has-text-success" ><%= @user.email %> <br>的訂單紀錄</h1>
-		<p class="has-text-weight-bold">聯絡電話:<%= @user.number %></p>
+		<h1 class="title is-size-6-mobile has-text-centered  has-text-success" ><%= @user.name %> <br>的訂單紀錄</h1>
+		<p class="has-text-weight-bold">聯絡電話: <%= @user.number %></p>
+		<p class="has-text-weight-bold">信箱: <%= @user.email %></p>
 		<br>
 		<br>
 		<% @orders.order(id: :desc).each do |order| %>
@@ -69,11 +70,11 @@
 		  <%= link_to '輸入取貨號碼',edit_admin_detail_order_path(@user,order) ,class:'button is-success  is-outlined '%>
 		  <%= link_to '取消訂單',admin_detail_order_path(@user,order),method: :delete,data: {confirm:'要取消嘛？'},class:'button is-danger is-outlined' %>	
 		<% elsif order.done and !order.cancel  %>
-		  	<div class="button is-success">
-			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 完成
+		  	<div class=" has-text-success ">
+			此訂單已經在 <%= order.updated_at.strftime('%m/%d') %> 完成<br>取貨編號:<%= order.deliver_number %>
 		    </div>
 		<% elsif !order.done and order.cancel%>
-			<div class="button is-danger">
+			<div class="has-text-danger ">
 			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 取消
 		   </div>
 		<% end %>
