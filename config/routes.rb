@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 		 get '/order'	       => 'products#order'
 		 get '/orders'	       => 'products#order_index'
 		 get '/detail'         => 'products#detail', as: 'detail'
+		 get '/agree'          => 'products#agree' ,as: 'agree'
+		 post '/agree'         => 'products#agreed'
 
 		 delete '/order/:id'   => 'products#item_destroy', as: 'item_destroy'
 		 patch '/order/:id'    => 'products#update',as: 'ordered_item'

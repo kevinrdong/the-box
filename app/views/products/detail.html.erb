@@ -11,7 +11,7 @@
 		<div class="box">
 		<% if order.cancel %>
 			<div class="has-text-danger ">
-			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 取消
+			此訂單已經在 <%= order.updated_at.strftime('%m/%d ') %> 取消
 		   </div>
 		<% elsif order.done %>	
 		  	<div class=" has-text-success ">
@@ -68,7 +68,7 @@
 		    <div class="column has-text-right">
 				下單日期:
 				<div class="has-text-weight-bold">
-					<%= order.created_at.strftime('%m/%d %H:%M') %>
+					<%= order.created_at.strftime('%m/%d') %>
 				</div>
 			</div>			
 		</div>

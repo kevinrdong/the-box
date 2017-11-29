@@ -1,0 +1,28 @@
+<section class="section">
+	<div class="container">
+	    <div class="column is-8 is-offset-2 is-13-mobile">
+			<div class="title has-text-centered has-text-success">購買須知</div>
+			<ol>
+				<li class="is-size-5 is-size-6-mobile"><span class="has-text-danger">本賣場以匯款的方式付款</span></li>
+				<li class="is-size-5 is-size-6-mobile">匯款銀行: XXXXX</li>
+				<li class="is-size-5 is-size-6-mobile">帳戶: XXXXX</li>
+				<li class="is-size-5 is-size-6-mobile">代號: XXX</li>
+				<li class="is-size-5 is-size-6-mobile">帳號: XXXXX</li>
+				<li class="is-size-5 is-size-6-mobile">商品寄出後，一盒會告知買家，商品已寄出以及取貨編號</li>
+				<li class="is-size-5 is-size-6-mobile">若有訂製商品，請在<span class="has-text-danger">訂單成立後預付一半的訂金</span>，以方便準備料材，一盒收到您的定金後便即刻開始製作您的訂單</li>
+			</ol>
+			<br>
+			<div class="title has-text-centered has-text-success">取消訂單須知</div>
+			<ol>
+				<li class="is-size-5 is-size-6-mobile">若要取消訂單者，請在<span class="has-text-danger">訂單成立後的3天內寄信或私訊一盒</span></li>
+				<li class="is-size-5 is-size-6-mobile">若要取消訂製商品者請在<span class="has-text-danger">匯款後 3 天內(含3天)，提出取消請求，若超過三天後提出取消者將吸收全部訂金</span></li>
+			</ol>
+			<hr>
+			<div class="column has-text-centered">
+				<%= link_to '同意',agree_path,method: :post,class:'button is-outlined is-success' %>	
+				<%= link_to '取消',orders_path ,class:'button is-outlined is-danger'%>	
+			</div>							
+		</div>
+	</div>
+</section>
+

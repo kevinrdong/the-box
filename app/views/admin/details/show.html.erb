@@ -75,7 +75,7 @@
 		    </div>
 		<% elsif !order.done and order.cancel%>
 			<div class="has-text-danger ">
-			此訂單已經在 <%= order.updated_at.strftime('%m/%d , %H:%M') %> 取消
+			此訂單已經在 <%= order.updated_at.strftime('%m/%d ') %> 取消
 		   </div>
 		<% end %>
 		</div>		

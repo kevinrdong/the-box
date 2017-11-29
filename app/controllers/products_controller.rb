@@ -87,11 +87,7 @@ class ProductsController < ApplicationController
 		else		
 			if order.total !=0
 				if order.update order_params
-					order.pay = 0
-					order.save
-					flash[:note]="訂單已成立！"
-					NewOrderMailer.new_order(current_user,order).deliver
-					redirect_to detail_path
+					redirect_to agree_path 
 				else
 					redirect_to orders_path
 				end	
@@ -104,6 +100,19 @@ class ProductsController < ApplicationController
 
 	def detail
 		@orders = Order.includes(:ordered_items,:products).where(['pay=? and user_id=?',0,current_user])
+	end
+
+	def agree
+
+	end
+
+	def agreed
+		order = Order.where('user_id=?',current_user).find_by(pay:1)
+		order.pay = 0
+		order.save
+		flash[:note]="訂單已成立！"
+		NewOrderMailer.new_order(current_user,order).deliver		
+		redirect_to detail_path
 	end
 
 
