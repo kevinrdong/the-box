@@ -13,7 +13,7 @@
   </head>
 
   <body>
-  <% if params[:action]== 'index'|| params[:action]=='brand'|| params[:action]=='designers' %>
+  <% if params[:action]== 'index'|| params[:action]=='brand'|| params[:action]=='designers' ||  params[:controller].split("/").first == 'users'%>
     <div class="cssload-thecube">
     <div class="cssload-cube cssload-c1"></div>
     <div class="cssload-cube cssload-c2"></div>
@@ -21,15 +21,13 @@
     <div class="cssload-cube cssload-c3"></div>
     </div>
   <% end %>
-   <div id="<%= 'rails' if params[:action]=='index'|| params[:action]=='brand'|| params[:action]=='designers' %>">
+   <div id="<%= 'rails' if params[:action]=='index'|| params[:action]=='brand'|| params[:action]=='designers' || params[:controller].split("/").first == 'users'%>">
     <% if params[:controller].split("/").first == 'admin'%>
   	<%= render "admin_navbar" %>
     <% else %>
     <%= render "navbar"%>
     <% end %>
-
- 
-          <%= yield %>  
+       <%= yield %>  
     </div>
 
   </body>
