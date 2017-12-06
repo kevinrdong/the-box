@@ -11,8 +11,8 @@ html{
 $success:rgb(54,133,12);
 $danger:hsl(348, 100%, 50%);
 $gap: 32px;
-$fullhd:2000px ;
-$widescreen: 1532px + (2 * $gap) ;
+$fullhd:2200px ;
+$widescreen: 2000px + (2 * $gap) ;
 $dimensions: 16 24 32 48 64 96 128 200 230 256 272 318 350 512 1000;
 
 .image{ 
@@ -31,6 +31,10 @@ overflow:hidden;
 
 .image .is-3by2{
 height: 100%;};
+
+aside{
+  margin-right: -20px;
+}
 
 
 
