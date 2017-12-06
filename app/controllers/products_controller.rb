@@ -89,6 +89,7 @@ class ProductsController < ApplicationController
 				if order.update order_params
 					redirect_to agree_path 
 				else
+					flash[:note]="請填入地址！"
 					redirect_to orders_path
 				end	
 			else

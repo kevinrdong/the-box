@@ -1,6 +1,6 @@
 <div class="title">親愛的 <%= @user.name %> ,您好：</div>
 <p>感謝您對一盒的喜愛與支持，以下是您本次在一盒所買的商品:</p>
-<p>訂單編號:<%= @order.id %></p>
+<p>訂單編號:<%= @order.id%></p>
 <% @order.ordered_items.each do |ordered_item|%>
 	<li><%= ordered_item.product.name %> <span><%= ordered_item.quantities %>個</span> , <span>單筆金額 <%= ordered_item.total %>元</span></li>
 <% end %>

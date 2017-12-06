@@ -13,14 +13,15 @@
   </head>
 
   <body>
-
+  <% if params[:action]== 'index'|| params[:action]=='brand'|| params[:action]=='designers' %>
     <div class="cssload-thecube">
     <div class="cssload-cube cssload-c1"></div>
     <div class="cssload-cube cssload-c2"></div>
     <div class="cssload-cube cssload-c4"></div>
     <div class="cssload-cube cssload-c3"></div>
     </div>
-   <div id="rails">
+  <% end %>
+   <div id="<%= 'rails' if params[:action]=='index'|| params[:action]=='brand'|| params[:action]=='designers' %>">
     <% if params[:controller].split("/").first == 'admin'%>
   	<%= render "admin_navbar" %>
     <% else %>
