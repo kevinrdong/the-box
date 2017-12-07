@@ -38,12 +38,12 @@
 						    	<div class="card" id="floatobject2">
 						    		<div class="card-image ">
 						    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
-						    				<%= link_to  edit_admin_commodity_path(product) do%>
+						    				<%= link_to  admin_commodity_path(product) do%>
 						    				<%= image_tag product.pictures_url(:thumb),style:'height:100%;max-width:none;width:auto',class:'fimg' %>
 						    				<% end %>
 						    			</figure>
 						    			<figure class="image is-square is-hidden-desktop" id="float" style="width:100%">
-						    				<%= link_to  edit_admin_commodity_path(product) do%>
+						    				<%= link_to  admin_commodity_path(product) do%>
 						    				<%= image_tag product.pictures_url(:thumb),style:'height:100%;max-width:none;width:auto' %>
 						    				<% end %>
 						    			</figure>				    			
