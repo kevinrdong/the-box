@@ -37,7 +37,7 @@
 				  	<% type.products.each do |product| %>
 					    <div class="column is-3-desktop is-6-mobile " id="floatobject" style="padding: 3px">
 					    	<div class="card" id="floatobject2">
-					    		<% if product.pictures_url(:thumb) %>
+					    		<% if product.pictures_url(:thumb).nil? %>
 						    		<div class="card-image ">
 						    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
 						    				<%= link_to  product_path(product) do%>
