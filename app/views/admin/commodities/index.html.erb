@@ -36,15 +36,15 @@
 				  	<% type.products.each do |product| %>
 						    <div class="column is-3-desktop is-6-mobile " id="floatobject" style="padding: 3px">
 						    	<div class="card" id="floatobject2">
-					    		<% if product.pictures_url(:thumb) %>
+					    		<% if product.pictures_url(:thumb).nil? %>
 						    		<div class="card-image ">
 						    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
-						    				<%= link_to  product_path(product) do%>
+						    				<%= link_to  edit_admin_commodity_path(product) do%>
 						    				<%= image_tag product.pictures_url(:thumb),style:'height:100%;max-width:none;width:auto',class:'fimg' %>
 						    				<% end %>
 						    			</figure>
 						    			<figure class="image is-square is-hidden-desktop" id="float" style="width:100%">
-						    				<%= link_to  product_path(product) do%>
+						    				<%= link_to  edit_admin_commodity_path(product) do%>
 						    				<%= image_tag product.pictures_url(:thumb),style:'height:100%;max-width:none;width:auto' %>
 						    				<% end %>
 						    			</figure>				    			
@@ -52,12 +52,12 @@
 						    	<% else %>
 							    		<div class="card-image ">
 							    			<figure class="image is-200x200 is-hidden-mobile" id="float" style="width:100%">
-							    				<%= link_to  product_path(product) do%>
+							    				<%= link_to  edit_admin_commodity_path(product) do%>
 							    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto',class:'fimg' %>
 							    				<% end %>
 							    			</figure>
 							    			<figure class="image is-square is-hidden-desktop" id="float" style="width:100%">
-							    				<%= link_to  product_path(product) do%>
+							    				<%= link_to  edit_admin_commodity_path(product) do%>
 							    				<%= image_tag product.pictures,style:'height:100%;max-width:none;width:auto' %>
 							    				<% end %>
 							    			</figure>				    			
