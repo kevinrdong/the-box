@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <script src="https://squaresend.com/squaresend.js">
-
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700i" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <% if params[:controller].split("/").first == 'admin'%>
+ <!-- <% if params[:controller].split("/").first == 'admin'%>
     <div class="cssload-thecube">
     <div class="cssload-cube cssload-c1"></div>
     <div class="cssload-cube cssload-c2"></div>
     <div class="cssload-cube cssload-c4"></div>
     <div class="cssload-cube cssload-c3"></div>
     </div>
-  <% end %>
+  <% end %>-->
    <div id="<%= 'rails' if params[:controller].split("/").first == 'admin'%>">
     <% if params[:controller].split("/").first == 'admin'%>
   	<%= render "admin_navbar" %>
@@ -28,6 +28,17 @@
     <%= render "navbar"%>
     <% end %>
        <%= yield %>  
+    <footer class="footer" style="padding-bottom: 48px;">
+      <div class="container has-text-centered">
+
+          <p style=" font-family: 'Playfair Display', serif;" class="is-size-4-desktop is-size-6-mobile">
+            Be warm, be unique and out of box
+          </p>
+          <br>
+          <p class="is-size-7-mobile">web design by Fatmylin.</p>
+
+      </div>
+    </footer>   
     </div>
 
   </body>
