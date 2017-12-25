@@ -21,7 +21,7 @@ class NewOrderMailer < ApplicationMailer
 	def mail_to_admin(user,order)
 		@user = user
 		@order = order
-		mail(to:lebox1995@gmail.com ,subject:"有人在《一盒》買都東西囉!")		
+		mail(to:'lebox1995@gmail.com' ,subject:"有人在《一盒》買都東西囉!")		
 	end
 
 end
